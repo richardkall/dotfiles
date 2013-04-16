@@ -4,7 +4,7 @@ ZSH_THEME="richard"
 DISABLE_AUTO_UPDATE="true"
 unsetopt correct_all
 
-plugins=(git github copydir extract gem heroku history pow terminalapp)
+plugins=(git github copydir extract gem heroku history pow terminalapp sublime)
 source $ZSH/oh-my-zsh.sh
 
 alias ..='cd ..'
