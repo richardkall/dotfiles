@@ -1,0 +1,23 @@
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="richard"
+
+DISABLE_AUTO_UPDATE="true"
+unsetopt correct_all
+
+plugins=(git github copydir extract gem heroku history pow terminalapp)
+source $ZSH/oh-my-zsh.sh
+
+alias ..='cd ..'
+alias ...='cd ..; cd ..'
+alias sites='cd ~/Sites'
+alias desktop='cd ~/Desktop'
+
+alias b='bundle'
+alias migrate='rake db:migrate && rake db:test:prepare'
+
+alias ssh:ec2='ssh -i ~/.ssh/richard-ec2.pem ec2-user@46.137.173.29'
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+eval "$(rbenv init -)"
