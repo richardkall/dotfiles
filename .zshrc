@@ -3,6 +3,7 @@ ZSH_THEME="richard"
 
 DISABLE_AUTO_UPDATE="true"
 unsetopt correct_all
+export TERM=xterm-256color
 
 plugins=(git github copydir extract gem heroku history pow terminalapp sublime)
 source $ZSH/oh-my-zsh.sh
@@ -24,3 +25,5 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 eval "$(rbenv init -)"
+
+
