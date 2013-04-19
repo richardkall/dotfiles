@@ -1,9 +1,9 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="richard"
 
-DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE=true
+DISABLE_AUTO_TITLE=true
 unsetopt correct_all
-export TERM=xterm-256color
 
 plugins=(git github copydir extract gem heroku history pow terminalapp sublime)
 source $ZSH/oh-my-zsh.sh
@@ -21,9 +21,12 @@ alias migrate='rake db:migrate && rake db:test:prepare'
 
 alias ssh:ec2='ssh -i ~/.ssh/richard-ec2.pem ec2-user@46.137.173.29'
 
+if [ "$TMUX" = "" ]; then tmux; fi
+
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
+
+[ -s $HOME/.tmuxinator/scripts/tmuxinator ] && source $HOME/.tmuxinator/scripts/tmuxinator
+export EDITOR='vim'
+
 export PATH="$HOME/.rbenv/bin:$PATH"
-
 eval "$(rbenv init -)"
-
-
