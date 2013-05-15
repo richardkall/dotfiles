@@ -1,10 +1,27 @@
 " Use Vim settings (must be first)
 set nocompatible
 
+" Set current working directory automatically
+autocmd BufEnter * lcd %:p:h
+
 " Use Vundle to manage plugins
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+" Bundles
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'croaky/vim-colors-github'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-surround'
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -44,8 +61,9 @@ call togglebg#map("<F5>")
 " Assume a dark background
 set background=dark
 
-" Use utf-8 file encoding
+" Use utf-8
 set fileencoding=utf-8
+set encoding=utf-8
 
 " Use system clipboard
 set clipboard=unnamedplus
@@ -78,12 +96,19 @@ highlight clear SignColumn
 set laststatus=2
 
 " Status line segments
-set statusline=%<%f\                       " Filename
-set statusline+=%w%h%m%r                   " Options
-" set statusline+=%{fugitive#statusline()} " Git Hotness
-set statusline+=\ [%{&ff}/%Y]              " Filetype
-set statusline+=\ [%{getcwd()}]            " Current dir
-set statusline+=%=%-14.(%l,%c%V%)\ %p%%    " Right aligned file nav info
+hi User1 ctermbg=white    ctermfg=black   guibg=#89A1A1 guifg=#002B36
+hi User2 ctermbg=red      ctermfg=white   guibg=#aa0000 guifg=#89a1a1
+
+set statusline=%1*[%<%f]
+set statusline+=%2*%w%h%m%r%*
+set statusline+=[
+set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
+set statusline+=%{&ff}\|
+set statusline+=%{strlen(&ft)?&ft:'<none>'}
+set statusline+=]\ \
+set statusline+=%{len(fugitive#head())?fugitive#head():''}
+" set statusline+=\ [%{getcwd()}]
+set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 " No extra spaces between rows
 set linespace=0
@@ -112,6 +137,7 @@ set scrolloff=3
 
 " Auto fold code
 set foldenable
+set foldmethod=syntax
 
 " Whitespace settings
 set list
@@ -122,6 +148,24 @@ set shiftwidth=2
 set expandtab
 set tabstop=4
 set softtabstop=2
+
+" Window size
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
+
+" Disable swap file
+set noswapfile
+
+" Enable visual bell
+set visualbell
+
+" Show color column
+set cc=80
+
+" .ru files are Ruby
+au BufRead,BufNewFile *.ru setfiletype ruby
 
 " Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,go,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> call StripTrailingWhitespace()
@@ -138,10 +182,14 @@ map <C-H> <C-W>h<C-W>_
 
 nnoremap j gj
 nnoremap k gk
+nnoremap <leader>m :NERDTreeToggle<CR>
 
 cmap Tabe tabe
 
 nnoremap Y y$
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Code folding options
 nmap <leader>f0 :set foldlevel=0<CR>
@@ -155,12 +203,11 @@ nmap <leader>f7 :set foldlevel=7<CR>
 nmap <leader>f8 :set foldlevel=8<CR>
 nmap <leader>f9 :set foldlevel=9<CR>
 
+" Paste toggle
+set pastetoggle=<F2>
+
 " Toggle search highlighting
 nmap <silent> <leader>/ :set invhlsearch<CR>
 
-" Bundles
-Bundle 'gmarik/vundle'
-
 " Enable file type detection
 filetype plugin indent on
-

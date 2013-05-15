@@ -1,5 +1,5 @@
 [user]
-	name = Richard Käll
+	name = Richard Käll
 	email = richard.kall@me.com
 [color]
 	ui = true
@@ -16,6 +16,7 @@
 	trustExitCode = true
 [mergetool]
 	prompt = false
+	keepBackup = true
 [merge]
 	tool = Kaleidoscope
 [alias]
@@ -23,4 +24,4 @@
 [credential]
 	helper = osxkeychain
 [push]
-	default = simple
+	default = matching
