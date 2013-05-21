@@ -27,8 +27,6 @@ alias zc='zeus cucumber'
 alias zcw='zeus cucumber --profile=wip'
 alias zra='zeus rake RAILS_ENV=test'
 
-alias ssh:ec2='ssh -i ~/.ssh/richard-ec2.pem ec2-user@46.137.173.29'
-
 if [ "$TMUX" = "" ]; then tmux; fi
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
