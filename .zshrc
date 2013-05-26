@@ -34,6 +34,7 @@ alias za='zeus rake RAILS_ENV=test'
 
 alias tn='tmux new-session -s'
 alias ta='tmux attach -t'
+alias ts='tmux switch -t'
 alias tls='tmux ls'
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
