@@ -1,28 +1,6 @@
 " Use Vim settings (must be first)
 set nocompatible
 
-" Set current working directory automatically
-autocmd BufEnter * lcd %:p:h
-
-" Use Vundle to manage plugins
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Bundles
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'croaky/vim-colors-github'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -55,10 +33,7 @@ let g:solarized_termtrans=1
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 
-" Map Solarized background toggle
-call togglebg#map("<F5>")
-
-" Assume a dark background
+" Set a dark background
 set background=dark
 
 " Use utf-8
@@ -76,14 +51,6 @@ set virtualedit=onemore
 
 " Allow buffer switching without saving
 set hidden
-
-" Turn on backups
-set backup
-
-" Turn on persistent undo
-set undofile
-set undolevels=1000
-set undoreload=10000
 
 " Display current mode
 set showmode
@@ -105,9 +72,6 @@ set statusline+=[
 set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
 set statusline+=%{&ff}\|
 set statusline+=%{strlen(&ft)?&ft:'<none>'}
-set statusline+=]\ \
-set statusline+=%{len(fugitive#head())?fugitive#head():''}
-" set statusline+=\ [%{getcwd()}]
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 " No extra spaces between rows
@@ -182,7 +146,6 @@ map <C-H> <C-W>h<C-W>_
 
 nnoremap j gj
 nnoremap k gk
-nnoremap <leader>m :NERDTreeToggle<CR>
 
 cmap Tabe tabe
 

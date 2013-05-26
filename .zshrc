@@ -5,18 +5,23 @@ DISABLE_AUTO_UPDATE=true
 DISABLE_AUTO_TITLE=true
 unsetopt correct_all
 
-plugins=(git github copydir extract gem heroku history pow terminalapp sublime)
+plugins=(git github extract gem heroku history pow sublime)
 source $ZSH/oh-my-zsh.sh
+
+# Fix slow Git autocomplete
+__git_files () {
+  _wanted files expl 'local files' _files
+}
 
 alias ..='cd ..'
 alias ...='cd ..; cd ..'
+alias home='cd ~/Sites'
 alias sites='cd ~/Sites'
 alias desktop='cd ~/Desktop'
 
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
-alias v='vim'
 alias m='mux'
 alias b='bundle'
 alias migrate='rake db:migrate && rake db:test:prepare'
@@ -24,10 +29,12 @@ alias z='zeus'
 alias zr='zeus rake'
 alias zs='zeus rspec'
 alias zc='zeus cucumber'
-alias zcw='zeus cucumber --profile=wip'
-alias zra='zeus rake RAILS_ENV=test'
+alias zw='zeus cucumber --profile=wip'
+alias za='zeus rake RAILS_ENV=test'
 
-if [ "$TMUX" = "" ]; then tmux; fi
+alias tn='tmux new-session -s'
+alias ta='tmux attach -t'
+alias tls='tmux ls'
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
 
