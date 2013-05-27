@@ -22,9 +22,11 @@ alias desktop='cd ~/Desktop'
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
+alias h='noglob http'
 alias m='mux'
 alias b='bundle'
 alias migrate='rake db:migrate && rake db:test:prepare'
+
 alias z='zeus'
 alias zr='zeus rake'
 alias zs='zeus rspec'
