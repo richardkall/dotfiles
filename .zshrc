@@ -32,6 +32,7 @@ alias zr='zeus rake'
 alias zs='zeus rspec'
 alias zc='zeus cucumber'
 alias zw='zeus cucumber --profile=wip'
+alias zslow='zeus cucumber --profile=slow'
 alias za='zeus rake RAILS_ENV=test'
 
 alias tn='tmux new-session -s'
