@@ -25,7 +25,7 @@ alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killa
 alias h='noglob http'
 alias m='mux'
 alias b='bundle'
-alias migrate='rake db:migrate && rake db:test:prepare'
+alias migrate='rake db:migrate && rake db:migrate RAILS_ENV=test'
 
 alias z='zeus'
 alias zr='zeus rake'
