@@ -5,7 +5,7 @@ DISABLE_AUTO_UPDATE=true
 DISABLE_AUTO_TITLE=true
 unsetopt correct_all
 
-plugins=(git github extract gem heroku history pow sublime)
+plugins=(extract gem heroku history)
 source $ZSH/oh-my-zsh.sh
 
 # Fix slow Git autocomplete
@@ -39,6 +39,8 @@ alias tn='tmux new-session -s'
 alias ta='tmux attach -t'
 alias ts='tmux switch -t'
 alias tls='tmux ls'
+
+alias g='git'
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
 
