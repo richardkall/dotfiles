@@ -7,7 +7,7 @@ DIR=~/.dotfiles
 BACKUP_DIR=~/.dotfiles_old
 
 # List of files & folders to symlink
-FILES=".gemrc .vimrc .zshrc .zshenv .gitconfig .powconfig .tmuxinator .tmux.conf .oh-my-zsh/themes/richard.zsh-theme .ssh"
+FILES=".gemrc .vim .vimrc .vimrc.bundles .zshrc .zshenv .gitconfig .powconfig .tmuxinator .tmux.conf .oh-my-zsh/themes/richard.zsh-theme .ssh"
 
 # Create backup folder
 echo "Creating $BACKUP_DIR for backup of any existing dotfiles..."

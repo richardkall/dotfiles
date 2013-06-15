@@ -41,6 +41,7 @@ alias ts='tmux switch -t'
 alias tls='tmux ls'
 
 alias g='git'
+alias c='clear'
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
 
