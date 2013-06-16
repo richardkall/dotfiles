@@ -8,7 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
-Bundle 'croaky/vim-colors-github'
+Bundle 'd11wtq/tomorrow-theme-vim'
 Bundle 'danro/rename.vim'
 Bundle 'kien/ctrlp.vim'
 
