@@ -196,3 +196,11 @@ set pastetoggle=<F2>
 
 " Toggle search highlighting
 nmap <silent> <leader>/ :set invhlsearch<CR>
+
+" ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_show_hidden = 1
+
+" Ignore files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
