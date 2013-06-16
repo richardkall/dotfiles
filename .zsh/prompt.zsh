@@ -5,18 +5,9 @@ function parse_git_branch {
   echo "("${ref#refs/heads/}")"
 }
 
-function parse_ruby {
-  if which rbenv > /dev/null; then
-    echo "[`rbenv version | sed -e 's/ .*//'`]"
-  else
-    echo "[unsure]"
-  fi
-}
-
 if [ -n "$SSH_CLIENT" ]; then
   host_info="%m%n"
 fi
 
-export PROMPT='
-%{$fg[red]%}$(parse_ruby) %{$fg[blue]%}%~ %{$fg[green]%}$(parse_git_branch) %{$reset_color%}
+export PROMPT='%{$fg[blue]%}%~ %{$fg[green]%}$(parse_git_branch) %{$reset_color%}
 %{$fg[blue]%}➜ %{$reset_color%}'
