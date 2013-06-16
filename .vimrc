@@ -105,11 +105,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
@@ -202,3 +197,9 @@ let g:ctrlp_show_hidden = 1
 
 " Ignore files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+" Ruby tests
+let g:rubytest_cmd_spec = "zeus rspec %p"
+let g:rubytest_cmd_example = "zeus rspec --example '%c' %p"
+let g:rubytest_cmd_feature = "zeus cucumber %p"
+let g:rubytest_cmd_story = "zeus cucumber %p -n '%c'"
