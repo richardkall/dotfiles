@@ -32,10 +32,12 @@ alias g=git
 alias gs='git status -sb'
 alias ga='git add'
 alias gc='git commit'
+alias gca='git commit --amend'
 alias gb='git branch'
 alias go='git checkout'
 alias gl='git log'
 alias gd='git diff'
+alias gp='git push'
 
 # Bundler
 alias b=bundle
