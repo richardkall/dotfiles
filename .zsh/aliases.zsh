@@ -22,9 +22,9 @@ alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killal
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
 # Tmux
-alias n='tmux new-sessions -s'
-alias a='tmux attach -t'
-alias s='tmux switch -t'
+alias tn='tmux new-session -s'
+alias ta='tmux attach -t'
+alias ts='tmux switch -t'
 alias tl='tmux ls'
 
 # Git
