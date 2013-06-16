@@ -1,15 +1,28 @@
 " Leader
 let mapleader = " "
 
-set nocompatible  " Use Vim settings, rather then Vi settings
+" Use vim settings, not vi
+set nocompatible
+
+" Disable backups & swap files
 set nobackup
 set nowritebackup
 set noswapfile
+
+" 50 lines of history
 set history=50
-set ruler         " Show the cursor position all the time
-set showcmd       " Display incomplete commands
-set incsearch     " Do incremental searching
-set laststatus=2  " Always display the status line
+
+" Show cursor position all the time
+set ruler
+
+" Show incomplete commands
+set showcmd
+
+" Enable incremental searching
+set incsearch
+
+" Always show the status line
+set laststatus=2
 
 " Turn on syntax highlighting
 syntax on
@@ -25,8 +38,10 @@ filetype plugin indent on
 augroup vimrcEx
   autocmd!
 
-  " Set textwidth to 78 characters for all textfiles
+  " File type settings
   autocmd FileType text setlocal textwidth=78
+  autocmd FileType markdown setlocal spell textwidth=80
+  autocmd FileType gitcommit setlocal spell textwidth=72
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
@@ -36,21 +51,8 @@ augroup vimrcEx
     \   exe "normal g`\"" |
     \ endif
 
-  " Cucumber navigation commands
-  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-  autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-
-  " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-
-  " Enable spellchecking for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal spell
-
   " .ru files are Ruby
   autocmd BufRead,BufNewFile *.ru setfiletype ruby
-
-  " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
 
 " Softtabs, 2 spaces
@@ -61,6 +63,7 @@ set expandtab
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
+" Use The Silver Searcher
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
 endif
@@ -74,21 +77,18 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 set number
 set numberwidth=5
 
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
-
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
 set wildmode=list:longest,list:full
 set complete=.,w,t
 function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
@@ -124,9 +124,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start

@@ -1,35 +1,25 @@
 [user]
-	name = Richard Käll
-	email = richard.kall@me.com
+  name = Richard Käll
+  email = richard.kall@me.com
 [color]
-	ui = true
+  ui = true
 [core]
-	editor = vim
+  editor = vim
 [difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
-	tool = Kaleidoscope
+  tool = Kaleidoscope
 [difftool]
-	prompt = false
+  prompt = false
 [mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
 [mergetool]
-	prompt = false
-	keepBackup = true
+  prompt = false
+  keepBackup = true
 [merge]
-	tool = Kaleidoscope
-[alias]
-  aa = add --all
-  br = branch
-  ca = commit --amend
-  c = commit -v
-  co = checkout
-  st = status
-  last = log -1 HEAD
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  merge-branch = !git checkout master && git merge @{-1} --ff-only
+  tool = Kaleidoscope
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [push]
-	default = matching
+  default = matching
