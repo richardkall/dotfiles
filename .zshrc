@@ -3,7 +3,7 @@ export DOTFILES=$HOME/.dotfiles
 
 # Initialize autocomplete
 autoload -U compinit
-compinit
+compinit -C
 
 # Initialize rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi

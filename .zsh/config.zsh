@@ -29,3 +29,6 @@ SAVEHIST=1000
 
 # Disable autosetting Terminal title
 DISABLE_AUTO_TITLE=true
+
+# Case insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
