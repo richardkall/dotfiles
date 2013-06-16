@@ -7,8 +7,8 @@ $ git clone https://github.com/richardkall/dotfiles.git ~/.dotfiles
 
 Run script:
 ```bash
-$ cd ~/.dotfiles;
-$ ./install
+$ cd ~/.dotfiles
+$ ./install.sh
 ```
 
 Clone Vundle:
