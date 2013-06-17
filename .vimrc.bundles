@@ -24,5 +24,6 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'janx/vim-rubytest'
+Bundle 'scrooloose/nerdtree.git'
 
 filetype on

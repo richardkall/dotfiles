@@ -203,3 +203,6 @@ let g:rubytest_cmd_spec = "zeus rspec %p"
 let g:rubytest_cmd_example = "zeus rspec --example '%c' %p"
 let g:rubytest_cmd_feature = "zeus cucumber %p"
 let g:rubytest_cmd_story = "zeus cucumber %p -n '%c'"
+
+" NERDTree
+nmap <silent> <C-k> :NERDTreeToggle<CR>
