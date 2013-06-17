@@ -38,6 +38,7 @@ alias go='git checkout'
 alias gl='git log'
 alias gd='git diff'
 alias gp='git push'
+alias gm='git merge'
 
 # Bundler
 alias b=bundle
