@@ -205,4 +205,4 @@ let g:rubytest_cmd_feature = "zeus cucumber %p"
 let g:rubytest_cmd_story = "zeus cucumber %p -n '%c'"
 
 " NERDTree
-nmap <silent> <C-k> :NERDTreeToggle<CR>
+nmap <silent> <C-d> :NERDTreeToggle<CR>
