@@ -51,5 +51,6 @@ alias cw='zeus cucumber --profile=wip'
 alias cs='zeus cucumber --profile=slow'
 
 # Rails
-alias m='rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:prepare'
 alias z=zeus
+alias m='zeus rake db:migrate && zeus rake db:rollback && zeus rake db:migrate && zeus rake db:test:prepare'
+alias rb='zeus rake db:rollback'
