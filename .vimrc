@@ -206,3 +206,6 @@ let g:rubytest_cmd_story = "zeus cucumber %p -n '%c'"
 
 " NERDTree
 nmap <silent> <C-d> :NERDTreeToggle<CR>
+
+" Use jj to exit insert mode
+imap jj <Esc>
