@@ -26,5 +26,7 @@ Bundle 'xenoterracide/html.vim'
 Bundle 'janx/vim-rubytest'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'rizzatti/dash.vim'
+Bundle 'rizzatti/funcoo.vim'
 
 filetype on
