@@ -46,12 +46,12 @@ alias b=bundle
 
 # Tests/specs
 alias r='zeus rake RAILS_ENV=test'
-alias s='zeus rspec'
-alias c='zeus cucumber'
-alias cw='zeus cucumber --profile=wip'
-alias cs='zeus cucumber --profile=slow'
+alias s='zeus rspec RAILS_ENV=test'
+alias c='zeus cucumber RAILS_ENV=test'
+alias cw='zeus cucumber --profile=wip RAILS_ENV=test'
+alias cs='zeus cucumber --profile=slow RAILS_ENV=test'
 
 # Rails
 alias z=zeus
-alias m='zeus rake db:migrate && zeus rake db:rollback && zeus rake db:migrate && zeus rake db:test:prepare'
+alias m='zeus rake db:migrate && zeus rake db:rollback && zeus rake db:migrate && zeus rake db:migrate RAILS_ENV=test && zeus rake db:test:prepare'
 alias rb='zeus rake db:rollback'
