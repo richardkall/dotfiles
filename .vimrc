@@ -209,3 +209,6 @@ nmap <silent> <C-d> :NERDTreeToggle<CR>
 
 " Use jj to exit insert mode
 imap jj <Esc>
+
+" Quick save
+noremap <Leader>s :update<CR>
