@@ -196,7 +196,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_show_hidden = 1
 
 " Ignore files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep
 
 " Ruby tests
 let g:rubytest_cmd_spec = "zeus rspec %p"
