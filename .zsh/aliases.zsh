@@ -46,7 +46,7 @@ alias b=bundle
 
 # Tests/specs
 alias r='zeus rake RAILS_ENV=test'
-alias s='zeus rspec RAILS_ENV=test'
+alias s='zeus rspec'
 alias c='zeus cucumber RAILS_ENV=test'
 alias cw='zeus cucumber --profile=wip RAILS_ENV=test'
 alias cs='zeus cucumber --profile=slow RAILS_ENV=test'
