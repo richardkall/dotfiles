@@ -212,3 +212,8 @@ imap jj <Esc>
 
 " Quick save
 noremap <Leader>s :update<CR>
+
+" Code folding
+set foldenable
+set foldmethod=indent
+nnoremap zz za
