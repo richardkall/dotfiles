@@ -51,8 +51,8 @@ augroup vimrcEx
     \   exe "normal g`\"" |
     \ endif
 
-  " .ru files are Ruby
   autocmd BufRead,BufNewFile *.ru setfiletype ruby
+  autocmd BufRead,BufNewFile Gemfile setfiletype ruby
 augroup END
 
 " Softtabs, 2 spaces
