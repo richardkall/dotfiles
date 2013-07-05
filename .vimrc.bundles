@@ -29,5 +29,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'slim-template/vim-slim'
+Bundle 'heartsentwined/vim-emblem'
+Bundle 'nono/vim-handlebars'
 
 filetype on
