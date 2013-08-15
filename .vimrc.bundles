@@ -31,5 +31,6 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'heartsentwined/vim-emblem'
 Bundle 'nono/vim-handlebars'
+Bundle 'elzr/vim-json'
 
 filetype on
