@@ -179,7 +179,7 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-autocmd FileType c,cpp,java,php,ruby,python,javascript,xml,yml,html autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,php,ruby,python,javascript,xml,yml,html,coffee,emblem,em autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " Faster copy
 nnoremap Y y$
