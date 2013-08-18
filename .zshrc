@@ -8,9 +8,14 @@ compinit -C
 # Initialize rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 
-# Intialize tmuxinator
-[ -s $HOME/.tmuxinator/scripts/tmuxinator ] && source $HOME/.tmuxinator/scripts/tmuxinator
-
 source $DOTFILES/.zsh/config.zsh
 source $DOTFILES/.zsh/prompt.zsh
 source $DOTFILES/.zsh/aliases.zsh
+
+# Auto-attach/create tmux session
+if [[ "$TERM" != "screen-256color" ]] then
+  if ! tmux has-session -t "$USER"; then
+    tmux new-session -s "$USER" -d
+  fi
+  tmux attach -t "$USER"
+fi
