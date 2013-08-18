@@ -1,5 +1,4 @@
 # Config files
-alias config='vim $DOTFILES/.zsh/config.zsh'
 alias aliases='vim $DOTFILES/.zsh/aliases.zsh'
 alias vimrc='vim $DOTFILES/.vimrc'
 
@@ -7,13 +6,12 @@ alias vimrc='vim $DOTFILES/.vimrc'
 alias ..='cd ..'
 alias ...='cd ..; cd ..'
 alias e=$EDITOR
-alias cl='clear'
 
 # Folders
+alias desktop='cd ~/Desktop'
 alias dotfiles='cd $DOTFILES'
 alias home='cd ~'
 alias sites='cd ~/Sites'
-alias desktop='cd ~/Desktop'
 
 # Flush DNS cache
 alias flushdns='dscacheutil -flushcache'
@@ -22,11 +20,17 @@ alias flushdns='dscacheutil -flushcache'
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
-# Tmux
+# Tmux/tmuxinator
 alias tn='tmux new-session -s'
 alias ta='tmux attach -t'
 alias ts='tmux switch -t'
-alias tl='tmux ls'
+alias tls='tmux ls'
+alias tm='tmuxinator'
+alias tmn='tmuxinator new'
+alias tmo='tmuxinator open'
+alias tmc='tmuxinator copy'
+alias tml='tmuxinator list'
+alias tmd='tmuxinator delete'
 
 # Git
 alias g=git
