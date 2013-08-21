@@ -25,12 +25,6 @@ alias tn='tmux new-session -s'
 alias ta='tmux attach -t'
 alias ts='tmux switch -t'
 alias tls='tmux ls'
-alias tm='tmuxinator'
-alias tmn='tmuxinator new'
-alias tmo='tmuxinator open'
-alias tmc='tmuxinator copy'
-alias tml='tmuxinator list'
-alias tmd='tmuxinator delete'
 
 # Git
 alias g=git
