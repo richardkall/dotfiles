@@ -1,85 +1,34 @@
-" Leader
-let mapleader = " "
-
-" Use vim settings, not vi
 set nocompatible
 
-" Disable backups & swap files
-set nobackup
-set nowritebackup
-set noswapfile
-
-" 50 lines of history
-set history=50
-
-" Show cursor position all the time
-set ruler
-
-" Show incomplete commands
-set showcmd
-
-" Enable incremental searching
-set incsearch
-
-" Always show the status line
-set laststatus=2
-
-" Turn on syntax highlighting
 syntax on
 
-" Load bundles
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
-
-" Enable file type detection
-filetype plugin indent on
-
-augroup vimrcEx
-  autocmd!
-
-  " File type settings
-  autocmd FileType text setlocal textwidth=78
-  autocmd FileType markdown setlocal spell textwidth=80
-  autocmd FileType gitcommit setlocal spell textwidth=72
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it for commit messages, when the position is invalid, or when
-  " inside an event handler (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  autocmd BufRead,BufNewFile *.ru setfiletype ruby
-  autocmd BufRead,BufNewFile Gemfile setfiletype ruby
-augroup END
-
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
 
 " Use The Silver Searcher
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
-" Color scheme
-colorscheme github
+function! s:SwitchColorScheme()
+  if g:colors_name == 'Tomorrow-Night'
+    colorscheme Tomorrow-Night-Bright
+  elseif g:colors_name == 'Tomorrow-Night-Bright'
+    colorscheme Tomorrow
+  elseif g:colors_name == 'Tomorrow'
+    colorscheme Tomorrow-Night
+  endif
+endfunction
 
-" Numbers
-set number
-set numberwidth=5
+function! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
 
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-set complete=.,w,t
+" Determines whether to insert a tab or use autocomplete
 function! InsertTabWrapper()
   let col = col('.') - 1
   if !col || getline('.')[col - 1] !~ '\k'
@@ -88,132 +37,102 @@ function! InsertTabWrapper()
     return "\<c-p>"
   endif
 endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
+augroup vimrcEx
+  autocmd!
+
+  autocmd BufReadPre * setlocal foldmethod=indent
+  autocmd BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+
+  autocmd BufRead,BufNewFile *.ru setfiletype ruby
+  autocmd BufRead,BufNewFile *.md setfiletype markdown
+  autocmd BufRead,BufNewFile Gemfile setfiletype ruby
+
+  autocmd FileType text,markdown setlocal spell textwidth=78
+  autocmd FileType gitcommit setlocal spell textwidth=72
+  autocmd FileType php,ruby,javascript,xml,yml,html,coffee,js,emblem,em autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
+  autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+
+  " Jump to the last known cursor position, except for commit messages
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+augroup END
+
+set clipboard=unnamedplus
+set cursorline
+set encoding=utf-8
+set expandtab
+set foldenable
+set foldmethod=syntax
+set hidden
+set history=50
+set ignorecase
+set incsearch
+set laststatus=2
+set list listchars=tab:»·,trail:·
+set linespace=0
+set nobackup
+set nowritebackup
+set noswapfile
+set numberwidth=5
+set pastetoggle=<F2>
+set relativenumber
+set ruler
+set scrolljump=1
+set scrolloff=3
+set shiftwidth=2
+set showcmd
+set showmatch
+set showmode
+set smartcase
+set splitbelow
+set splitright
+set statusline=%<%f\ %w%h%m%r%*%=%-14.(%l,%c%V%)\ %p%%
+set tabstop=2
+set visualbell
+set wildignore+=*/tmp/*,*/.tmp/*,*/.git/*,*/.sass-cache/*,*.DS_Store,*.keep,*.swp,*.zip
+set wildmenu wildmode=list:longest,full
+
+let mapleader = " "
+
+let g:ctrlp_show_hidden = 1
+let g:html_indent_tags = 'li\|p'
+let g:rspec_command = 'call Send_to_Tmux("zeus rspec {spec}\n")'
+let g:syntastic_check_on_open=1
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
-" Index ctags from any project, including those outside Rails
-map <Leader>ct :!ctags -R .<CR>
+colorscheme Tomorrow-Night
 
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
+noremap <Leader>S :update<CR>
+map <silent> <C-d> :NERDTreeToggle<CR>
+map <silent> <F6> :call <SID>SwitchColorScheme()<CR>
+map <Leader>ct :!`brew --prefix`/bin/ctags -R --exclude=.git --exclude=log *<CR>
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
-" Turn off arrow keys
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-" Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+nnoremap <Leader>% :vsplit<cr>
+nnoremap <Leader>- :split<cr>
+nnoremap <Leader><Leader> <c-^>
+nnoremap <Silent> <Leader>/ :set invhlsearch<CR>
+nnoremap § <C-]>
+nnoremap zz za
+nnoremap <silent> <leader>d <Plug>DashSearch
 
-" Allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-" Use utf-8
-set fileencoding=utf-8
-set encoding=utf-8
-
-" Abbrev. om messages (avoids 'hit enter')
-set shortmess+=filmnrxoOtT
-
-" Use system clipboard
-set clipboard=unnamedplus
-
-" Allow buffer switching without saving
-set hidden
-
-" Display current mode
-set showmode
-
-" Highlight current line
-set cursorline
-highlight clear SignColumn
-
-" Status line segments
-set statusline=%<%f
-set statusline+=\ %w%h%m%r%*
-set statusline+=%=%-14.(%l,%c%V%)\ %p%%
-
-" Case insensitive search
-set ignorecase
-
-" Case sensitive when UC present
-set smartcase
-
-" No extra spaces between rows
-set linespace=0
-
-" Show matching brackets/parenthesis
-set showmatch
-
-" Show list instead of just completing
-set wildmenu
-set wildmode=list:longest,full
-
-" Lines to scroll when cursor leaves screen
-set scrolljump=1
-
-" Minimum lines to keep above and below cursor
-set scrolloff=3
-
-" Enable visual bell
-set visualbell
-
-" Remove trailing whitespaces
-fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfun
-
-autocmd FileType c,cpp,java,php,ruby,python,javascript,xml,yml,html,coffee,emblem,em autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-
-" Faster copy
-nnoremap Y y$
-
-" Paste toggle
-set pastetoggle=<F2>
-
-" Toggle search highlighting
-nmap <silent> <leader>/ :set invhlsearch<CR>
-
-" ctrlp
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_show_hidden = 1
-
-" Ignore files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store
-
-" Ruby tests
-let g:rubytest_cmd_spec = "zeus rspec %p"
-let g:rubytest_cmd_example = "zeus rspec --example '%c' %p"
-let g:rubytest_cmd_feature = "zeus cucumber %p"
-let g:rubytest_cmd_story = "zeus cucumber %p -n '%c'"
-
-" NERDTree
-nmap <silent> <C-d> :NERDTreeToggle<CR>
-
-" Use jj to exit insert mode
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 imap jj <Esc>
 
-" Quick save
-noremap <Leader>s :update<CR>
-
-" Code folding
-set foldenable
-set foldmethod=indent
-nnoremap zz za
+vnoremap zz zf
