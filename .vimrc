@@ -52,6 +52,19 @@ augroup vimrcEx
   autocmd FileType gitcommit setlocal spell textwidth=72
   autocmd FileType php,ruby,javascript,xml,yml,html,coffee,js,emblem,em autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
+  autocmd BufNewFile,BufReadPost,BufEnter *.feature
+    \ set filetype=cucumber|
+    \ :nmap <leader>t :call Send_to_Tmux("zeus cucumber RAILS_ENV=test " . expand("%") . "\n")<CR>|
+    \ :nmap <leader>s :call Send_to_Tmux("zeus cucumber RAILS_ENV=test " . expand("%") . "\:<C-R>=line(".")<CR>\n")<CR>|
+    \ :nmap <leader>a :call Send_to_Tmux("zeus cucumber RAILS_ENV=test features/\n")<CR>|
+
+  autocmd BufNewFile,BufReadPost,BufEnter *.rb
+    \ set filetype=ruby|
+    \ nnoremap <Leader>t :call RunCurrentSpecFile()<CR>|
+    \ nnoremap <Leader>s :call RunNearestSpec()<CR>|
+    \ nnoremap <Leader>l :call RunLastSpec()<CR>|
+    \ nnoremap <Leader>a :call RunAllSpecs()<CR>|
+
   autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
   autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
 
@@ -107,14 +120,11 @@ let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
 colorscheme Tomorrow-Night
 
-noremap <Leader>S :update<CR>
 map <silent> <C-d> :NERDTreeToggle<CR>
 map <silent> <F6> :call <SID>SwitchColorScheme()<CR>
 map <Leader>ct :!`brew --prefix`/bin/ctags -R --exclude=.git --exclude=log *<CR>
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+
+noremap <Leader>S :update<CR>
 
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -127,7 +137,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <Leader>% :vsplit<cr>
 nnoremap <Leader>- :split<cr>
 nnoremap <Leader><Leader> <c-^>
-nnoremap <Silent> <Leader>/ :set invhlsearch<CR>
+nnoremap <silent> <Leader>/ :set invhlsearch<CR>
 nnoremap § <C-]>
 nnoremap zz za
 nnoremap <silent> <leader>d <Plug>DashSearch
