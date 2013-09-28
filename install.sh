@@ -1,26 +1,18 @@
-#!/bin/bash
+#!/bin/sh
 
-# Dotfiles folder
-DIR=~/.dotfiles
-
-# Backup folder
-BACKUP_DIR=~/.dotfiles_old
-
-# List of files & folders to symlink
-FILES=".gemrc .gitconfig .powconfig .rspec .tmux.conf .vimrc .vimrc.bundles .zsh .zshrc"
-
-# Create backup folder
-echo "Creating $BACKUP_DIR for backup of any existing dotfiles..."
-mkdir -p $BACKUP_DIR
-
-# Change to the dotfiles folder
-echo "Changing to the $DIR folder..."
-cd $DIR
-
-# Move/backup existing dotfiles then create symlinks
-for FILE in $FILES; do
-  echo "Backing up $FILE from ~ to $BACKUP_DIR..."
-  mv ~/$FILE $BACKUP_DIR
-  echo "Creating symlink to $FILE in home directory..."
-  ln -s $DIR/$FILE ~/$FILE
+for name in *; do
+  target="$HOME/.$name"
+  if [ -e "$target" ]; then
+    if [ ! -L "$target" ]; then
+      echo "WARNING: $target exists but is not a symlink."
+    fi
+  else
+    if [ "$name" != 'install.sh' ] && [ "$name" != 'README.md' ]; then
+      echo "Creating $target"
+      ln -s "$PWD/$name" "$target"
+    fi
+  fi
 done
+
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+vim -u ~/.vimrc.bundles +BundleInstall +qa

@@ -1,6 +1,6 @@
 # Config files
-alias aliases='vim $DOTFILES/.zsh/aliases.zsh'
-alias vimrc='vim $DOTFILES/.vimrc'
+alias aliases='vim $DOTFILES/zsh/aliases.zsh'
+alias vimrc='vim $DOTFILES/vimrc'
 
 # Unix/OS X
 alias ..='cd ..'
