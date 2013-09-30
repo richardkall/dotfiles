@@ -9,7 +9,7 @@ alias e=$EDITOR
 
 # Folders
 alias desktop='cd ~/Desktop'
-alias dotfiles='cd $DOTFILES'
+alias dotfiles='cd ~/.dotfiles'
 alias home='cd ~'
 alias sites='cd ~/Sites'
 
@@ -43,13 +43,10 @@ alias gm='git merge'
 alias b=bundle
 
 # Tests/specs
-alias r='zeus rake RAILS_ENV=test'
-alias s='zeus rspec'
-alias c='zeus cucumber RAILS_ENV=test'
-alias cw='zeus cucumber --profile=wip RAILS_ENV=test'
-alias cs='zeus cucumber --profile=slow RAILS_ENV=test'
+alias c='cucumber RAILS_ENV=test'
+alias r='rake RAILS_ENV=test'
+alias s='rspec'
 
 # Rails
-alias z=zeus
-alias m='zeus rake db:migrate && zeus rake db:rollback && zeus rake db:migrate && zeus rake db:migrate RAILS_ENV=test && zeus rake db:test:prepare'
-alias rb='zeus rake db:rollback'
+alias m='rake db:migrate && rake db:migrate RAILS_ENV=test'
+alias rb='rake db:rollback && rake db:rollback RAILS_ENV=test'

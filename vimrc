@@ -54,9 +54,9 @@ augroup vimrcEx
 
   autocmd BufNewFile,BufReadPost,BufEnter *.feature
     \ set filetype=cucumber|
-    \ :nmap <leader>t :call Send_to_Tmux("zeus cucumber RAILS_ENV=test " . expand("%") . "\n")<CR>|
-    \ :nmap <leader>s :call Send_to_Tmux("zeus cucumber RAILS_ENV=test " . expand("%") . "\:<C-R>=line(".")<CR>\n")<CR>|
-    \ :nmap <leader>a :call Send_to_Tmux("zeus cucumber RAILS_ENV=test features/\n")<CR>|
+    \ :nmap <leader>t :call Send_to_Tmux("cucumber RAILS_ENV=test " . expand("%") . "\n")<CR>|
+    \ :nmap <leader>s :call Send_to_Tmux("cucumber RAILS_ENV=test " . expand("%") . "\:<C-R>=line(".")<CR>\n")<CR>|
+    \ :nmap <leader>a :call Send_to_Tmux("cucumber RAILS_ENV=test features/\n")<CR>|
 
   autocmd BufNewFile,BufReadPost,BufEnter *.rb
     \ set filetype=ruby|
@@ -114,7 +114,7 @@ let mapleader = " "
 
 let g:ctrlp_show_hidden = 1
 let g:html_indent_tags = 'li\|p'
-let g:rspec_command = 'call Send_to_Tmux("zeus rspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 let g:syntastic_check_on_open=1
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
