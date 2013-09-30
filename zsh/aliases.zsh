@@ -43,7 +43,7 @@ alias gm='git merge'
 alias b=bundle
 
 # Tests/specs
-alias c='cucumber RAILS_ENV=test'
+alias c='bundle exec cucumber RAILS_ENV=test'
 alias r='rake RAILS_ENV=test'
 alias s='rspec'
 
