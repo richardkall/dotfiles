@@ -46,6 +46,7 @@ alias b=bundle
 alias c='bundle exec cucumber RAILS_ENV=test'
 alias r='rake RAILS_ENV=test'
 alias s='rspec'
+alias http='noglob http'
 
 # Rails
 alias m='rake db:migrate && rake db:migrate RAILS_ENV=test'
