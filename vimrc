@@ -123,6 +123,7 @@ colorscheme Tomorrow-Night
 map <silent> <C-d> :NERDTreeToggle<CR>
 map <silent> <F6> :call <SID>SwitchColorScheme()<CR>
 map <Leader>ct :!`brew --prefix`/bin/ctags -R --exclude=.git --exclude=log *<CR>
+map <Leader>p :r ~/.vimbuffer<CR>
 
 noremap <Leader>S :update<CR>
 
@@ -141,8 +142,10 @@ nnoremap <silent> <Leader>/ :set invhlsearch<CR>
 nnoremap § <C-]>
 nnoremap zz za
 nnoremap <silent> <leader>d <Plug>DashSearch
+nnoremap <Leader>c :.w! ~/.vimbuffer<CR>
 
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-imap jj <Esc>
+inoremap jj <Esc>
 
 vnoremap zz zf
+vnoremap <Leader>c :w! ~/.vimbuffer<CR>
