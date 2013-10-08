@@ -16,6 +16,9 @@ bindkey -v
 unsetopt correct
 unsetopt correct_all
 
+# Allow []
+unsetopt nomatch
+
 # Expand commands
 setopt PROMPT_SUBST
 
