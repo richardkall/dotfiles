@@ -52,20 +52,6 @@ augroup vimrcEx
   autocmd FileType gitcommit setlocal spell textwidth=72
   autocmd FileType php,ruby,javascript,xml,yml,html,coffee,js,emblem,em autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-  autocmd BufNewFile,BufReadPost,BufEnter *.feature
-    \ set filetype=cucumber|
-    \ :nmap <leader>t :call Send_to_Tmux("cucumber RAILS_ENV=test " . expand("%") . "\n")<CR>|
-    \ :nmap <leader>s :call Send_to_Tmux("cucumber RAILS_ENV=test " . expand("%") . "\:<C-R>=line(".")<CR>\n")<CR>|
-    \ :nmap <leader>a :call Send_to_Tmux("cucumber RAILS_ENV=test features/\n")<CR>|
-
-  autocmd BufNewFile,BufReadPost,BufEnter *.rb
-    \ set filetype=ruby|
-    \ nnoremap <Leader>t :call RunCurrentSpecFile()<CR>|
-    \ nnoremap <Leader>s :call RunNearestSpec()<CR>|
-    \ nnoremap <Leader>l :call RunLastSpec()<CR>|
-    \ nnoremap <Leader>a :call RunAllSpecs()<CR>|
-
-  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
   autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
 
   " Jump to the last known cursor position, except for commit messages
@@ -143,6 +129,10 @@ nnoremap § <C-]>
 nnoremap zz za
 nnoremap <silent> <leader>d <Plug>DashSearch
 nnoremap <Leader>c :.w! ~/.vimbuffer<CR>
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>|
+nnoremap <Leader>s :call RunNearestSpec()<CR>|
+nnoremap <Leader>l :call RunLastSpec()<CR>|
+nnoremap <Leader>a :call RunAllSpecs()<CR>|
 
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap jj <Esc>
