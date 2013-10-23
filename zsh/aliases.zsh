@@ -43,10 +43,11 @@ alias gm='git merge'
 alias b=bundle
 
 # Tests/specs
-alias r='rake RAILS_ENV=test'
+alias r='rake'
 alias s='rspec'
 alias http='noglob http'
 
 # Rails
-alias m='rake db:migrate && rake db:migrate RAILS_ENV=test'
-alias rb='rake db:rollback && rake db:rollback RAILS_ENV=test'
+alias m='rake db:migrate'
+alias rb='rake db:rollback'
+alias tp='rake db:test:prepare'
