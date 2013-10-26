@@ -6,6 +6,8 @@ alias vimrc='vim $DOTFILES/vimrc'
 alias ..='cd ..'
 alias ...='cd ..; cd ..'
 alias e=$EDITOR
+alias o='open .'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; sudo gem update'
 
 # Folders
 alias desktop='cd ~/Desktop'
