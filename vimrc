@@ -61,6 +61,7 @@ augroup vimrcEx
     \ endif
 augroup END
 
+set backspace=2
 set clipboard=unnamed
 set cursorline
 set encoding=utf-8
