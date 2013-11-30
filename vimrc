@@ -129,11 +129,12 @@ nnoremap <Leader><Leader> <c-^>
 nnoremap <silent> <Leader>/ :set invhlsearch<CR>
 nnoremap § <C-]>
 nnoremap zz za
-nnoremap <silent> <leader>d <Plug>DashSearch
+nnoremap <silent> <Leader>d <Plug>DashSearch
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>|
 nnoremap <Leader>s :call RunNearestSpec()<CR>|
 nnoremap <Leader>l :call RunLastSpec()<CR>|
 nnoremap <Leader>a :call RunAllSpecs()<CR>|
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap jj <Esc>
