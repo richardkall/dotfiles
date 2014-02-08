@@ -24,3 +24,5 @@
   helper = osxkeychain
 [push]
   default = matching
+[commit]
+  template = ~/.gitmessage
