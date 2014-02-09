@@ -1,20 +1,54 @@
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/share/npm/bin"
-
-# Initialize autocomplete
+# Use autocomplete
 autoload -U compinit
 compinit -C
 
-# Initialize rbenv
+# Load rbenv if available
 if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 
-source $HOME/.zsh/config.zsh
-source $HOME/.zsh/prompt.zsh
-source $HOME/.zsh/aliases.zsh
+# Use Vim as visual editor
+export VISUAL=vim
+export EDITOR=$VISUAL
 
-# Auto-attach/create tmux session
-if [[ "$TERM" != "screen-256color" ]] then
-  if ! tmux has-session -t "$USER"; then
-    tmux new-session -s "$USER" -d
-  fi
-  tmux attach -t "$USER"
-fi
+# Disable autocorrect
+unsetopt correct
+unsetopt correct_all
+
+# Enable extended globbing
+setopt extendedglob
+
+# Allow []
+unsetopt nomatch
+
+# Act like Vim
+bindkey -v
+bindkey jj vi-cmd-mode
+
+# Speed up Ruby tests
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
+
+# Ignore duplicates and blanks in history
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+
+# Save tons of history
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Disable autosetting Terminal title
+DISABLE_AUTO_TITLE=true
+
+# Case insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Load prompt config
+[[ -f ~/.prompt ]] && source ~/.prompt
+
+# Load aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
+
+# Local local config
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

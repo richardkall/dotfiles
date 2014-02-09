@@ -29,4 +29,8 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 
-filetype plugin indent on
+if filereadable(expand('~/.vimrc.bundles.local'))
+  source ~/.vimrc.bundles.local
+endif
+
+filetype on

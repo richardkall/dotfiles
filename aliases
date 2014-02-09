@@ -1,7 +1,3 @@
-# Config files
-alias aliases='vim $DOTFILES/zsh/aliases.zsh'
-alias vimrc='vim $DOTFILES/vimrc'
-
 # Unix/OS X
 alias ..='cd ..'
 alias ...='cd ..; cd ..'
@@ -45,11 +41,12 @@ alias gm='git merge'
 alias b=bundle
 
 # Tests/specs
-alias r='rake'
-alias s='rspec'
-alias http='noglob http'
 
 # Rails
-alias m='rake db:migrate'
-alias rb='rake db:rollback'
-alias tp='rake db:test:prepare'
+alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
+alias m='migrate'
+alias r='rake'
+alias s='rspec'
+
+# Load local aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
