@@ -4,11 +4,25 @@ Clone repo:
 
 ```
 $ git clone https://github.com/richardkall/dotfiles.git ~/.dotfiles
-````
+```
 
-Install:
+Install [rcm](https://github.com/thoughtbot/rcm):
 
 ```
 $ cd ~/.dotfiles
-$ ./install.sh
+$ brew bundle
 ```
+
+Install dotfiles:
+
+```
+$ rcup -d dotfiles -x README.md
+```
+
+To update dotfiles, use:
+
+```
+$ rcup
+```
+
+Put your customizations in dotfiles appended with `.local`:
