@@ -16,7 +16,7 @@ $ brew bundle
 Install dotfiles:
 
 ```
-$ rcup -d dotfiles -x README.md
+$ rcup -d ~/.dotfiles -x README.md
 ```
 
 To update dotfiles, use:
@@ -25,4 +25,4 @@ To update dotfiles, use:
 $ rcup
 ```
 
-Put your customizations in dotfiles appended with `.local`:
+Put your customizations in the home folder and append them with `.local`:
