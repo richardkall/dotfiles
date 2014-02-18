@@ -50,5 +50,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # Load aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-# Local local config
+# Load local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
