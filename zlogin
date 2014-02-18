@@ -28,3 +28,6 @@ if [[ "$TERM" != 'screen-256color' ]] then
 fi
 
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/share/npm/bin"
+
+# Load local config
+[[ -f ~/.zlogin.local ]] && source ~/.zlogin.local
