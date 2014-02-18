@@ -9,7 +9,6 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 alias desktop='cd ~/Desktop'
 alias dotfiles='cd ~/.dotfiles'
 alias home='cd ~'
-alias sites='cd ~/Sites'
 
 # Flush DNS cache
 alias flushdns='dscacheutil -flushcache'
