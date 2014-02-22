@@ -173,9 +173,6 @@ nnoremap § <C-]>
 nnoremap zz za
 vnoremap zz zf
 
-" Search in Dash
-nnoremap <silent> <Leader>d <Plug>DashSearch
-
 " Insert tab
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
