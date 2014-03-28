@@ -44,9 +44,6 @@ DISABLE_AUTO_TITLE=true
 # Case insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# Load prompt config
-[[ -f ~/.prompt ]] && source ~/.prompt
-
 # Load aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
