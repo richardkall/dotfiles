@@ -2,7 +2,7 @@
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
   if [[ -n $ref ]]; then
-    echo " %{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}"
+    echo " [%{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}]"
   fi
 }
 
@@ -17,7 +17,7 @@ export CLICOLOR=1
 setopt promptsubst
 
 # Prompt
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %{$reset_color%}%{$fg[blue]%}➜ %{$reset_color%}'
+export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}➜ %{$reset_color%}'
 
 # Auto-attach/create tmux session
 if [[ "$TERM" != 'screen-256color' ]] then
