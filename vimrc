@@ -66,7 +66,7 @@ augroup general
     \ endif
 
   " Automatically strip trailing whitespace
-  autocmd FileType php,ruby,javascript,xml,yml,html,coffee,js autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
+  autocmd FileType php,ruby,javascript,xml,yml,html,js autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
 augroup END
 
 
