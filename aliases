@@ -24,20 +24,6 @@ alias ta='tmux attach -t'
 alias ts='tmux switch -t'
 alias tls='tmux ls'
 
-# Git
-alias g=git
-alias gs='git status -sb'
-alias ga='git add'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gb='git branch'
-alias go='git checkout'
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias gd='git diff'
-alias gp='git push'
-alias gm='git merge'
-alias gw='git whatchanged'
-
 # Bundler
 alias b=bundle
 

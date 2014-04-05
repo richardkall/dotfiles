@@ -1,30 +1,29 @@
+[alias]
+  aa = add --all
+  ap = add --patch
+  ca = commit --amend
+  ci = commit -v
+  co = checkout
+  lg = log --oneline --decorate --graph --date=relative
+  st = status
+  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
+  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+  merge-branch = !git checkout master && git merge @{-1}
+[color]
+  ui = auto
+[commit]
+  template = ~/.gitmessage
+[core]
+  autocrlf = input
+  excludesfile = ~/.gitignore
+[credential]
+  helper = osxkeychain
+[include]
+  path = .gitconfig.local
+[merge]
+  ff = only
+[push]
+  default = current
 [user]
   name = Richard Käll
   email = richard.kall@me.com
-[color]
-  ui = true
-[core]
-  editor = vim
-  excludesfile = ~/.gitignore
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-  tool = Kaleidoscope
-[difftool]
-  prompt = false
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
-[mergetool]
-  prompt = false
-  keepBackup = true
-[merge]
-  tool = Kaleidoscope
-[credential]
-  helper = osxkeychain
-[push]
-  default = matching
-[commit]
-  template = ~/.gitmessage
-[include]
-  path = .gitconfig.local

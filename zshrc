@@ -2,6 +2,11 @@
 autoload -U compinit
 compinit -C
 
+# Include functions
+for function in ~/.zsh/functions/*; do
+  source $function
+done
+
 # Load rbenv if available
 if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 
