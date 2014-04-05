@@ -1,23 +1,24 @@
-# Unix/OS X
+# Unix
 alias ..='cd ..'
-alias ...='cd ..; cd ..'
+alias ...='cd ../..'
 alias e=$EDITOR
+alias l='ls'
+alias lh='ls -Alh'
+alias ll='ls -al'
+alias mkdir='mkdir -p'
 alias o='open .'
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; sudo gem update'
 
 # Folders
 alias desktop='cd ~/Desktop'
 alias dotfiles='cd ~/.dotfiles'
+alias dropbox='cd ~/Dropbox'
 alias home='cd ~'
-
-# Flush DNS cache
-alias flushdns='dscacheutil -flushcache'
 
 # Show/hide hidden files
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
-# Tmux/tmuxinator
+# Tmux
 alias tn='tmux new-session -s'
 alias ta='tmux attach -t'
 alias ts='tmux switch -t'
@@ -40,13 +41,11 @@ alias gw='git whatchanged'
 # Bundler
 alias b=bundle
 
-# Tests/specs
-
 # Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
 alias m='migrate'
-alias r='rake'
+alias rk='rake'
 alias s='rspec'
 
-# Load local aliases
+# Include local aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
