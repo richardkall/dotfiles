@@ -1,4 +1,4 @@
-# No arguments: `git status`
+# No arguments: `git status -sb`
 # With arguments: acts like `git`
 g() {
   if [[ $# > 0 ]]; then
