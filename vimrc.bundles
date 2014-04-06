@@ -4,24 +4,24 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'elzr/vim-json'
-Bundle 'itspriddle/vim-marked'
-Bundle 'jgdavey/tslime.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'scrooloose/syntastic'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'tsaleh/vim-matchit'
-Bundle 'vim-scripts/tComment'
-Bundle 'xenoterracide/html.vim'
+Plugin 'gmarik/vundle'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'elzr/vim-json'
+Plugin 'itspriddle/vim-marked'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'jwhitley/vim-matchit'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/syntastic'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/tComment'
+Plugin 'xenoterracide/html.vim'
 
 if filereadable(expand('~/.vimrc.bundles.local'))
   source ~/.vimrc.bundles.local
