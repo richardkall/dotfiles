@@ -7,6 +7,7 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'claco/jasmine.vim'
 Plugin 'elzr/vim-json'
 Plugin 'itspriddle/vim-marked'
 Plugin 'jgdavey/tslime.vim'
