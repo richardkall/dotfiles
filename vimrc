@@ -74,6 +74,7 @@ augroup END
 " UI
 " -------------------------------------------------------------------
 
+set background=dark          " Use dark background
 set cursorline               " Highlight current line
 set laststatus=2             " Always display status line
 set list                     " Show whitespace characters
@@ -91,8 +92,8 @@ set statusline=%<%f\ %w%h%m%r%*%=%-14.(%l,%c%V%)\ %p%%
 " Enable syntax highlighting
 syntax on
 
-" Use Tomorrow Night color scheme
-colorscheme Tomorrow-Night
+" Use base16 color scheme
+colorscheme base16-default
 
 
 " ---------------------------------------------------------------------
@@ -162,9 +163,6 @@ nnoremap <Leader>" :split<cr>
 " Insert tab or use autocomplete
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
-" Switch color scheme
-noremap <silent> <F6> :call <SID>SwitchColorScheme()<CR>
-
 " Index Ctags
 map <Leader>ct :!`brew --prefix`/bin/ctags -R --exclude=.git --exclude=log *<CR>
 
@@ -183,17 +181,6 @@ function! <SID>StripTrailingWhitespace()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
-
-" Switch color scheme
-function! s:SwitchColorScheme()
-  if g:colors_name == 'Tomorrow-Night'
-    colorscheme Tomorrow-Night-Bright
-  elseif g:colors_name == 'Tomorrow-Night-Bright'
-    colorscheme Tomorrow
-  elseif g:colors_name == 'Tomorrow'
-    colorscheme Tomorrow-Night
-  endif
-endfunction
 
 " Determine whether to insert a tab or use autocomplete
 function! InsertTabWrapper()
