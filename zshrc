@@ -6,7 +6,7 @@ git_prompt_info() {
   fi
 }
 setopt promptsubst
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}➜ %{$reset_color%}'
+export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}$ %{$reset_color%}'
 
 # Include custom completion functions
 fpath=(~/.zsh/completion $fpath)
