@@ -29,9 +29,9 @@ colors
 export CLICOLOR=1
 
 # Save tons of history
-setopt histignoredups
-setopt histreduceblanks
-HISTFILE=~/.zsh_history
+setopt hist_ignore_all_dups
+setopt inc_append_history
+HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
 
