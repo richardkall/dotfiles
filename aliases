@@ -33,5 +33,8 @@ alias m='migrate'
 alias rk='rake'
 alias s='rspec'
 
+# Middleman
+alias mm='middleman'
+
 # Include local aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
