@@ -28,7 +28,7 @@ alias tls='tmux ls'
 alias b=bundle
 
 # Rails
-alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
+alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias m='migrate'
 alias rk='rake'
 alias s='rspec'
