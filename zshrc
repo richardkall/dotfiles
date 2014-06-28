@@ -1,12 +1,18 @@
-# Modify the prompt to contain git branch name
+# Modify the prompt to contain git branch name and check if dirty
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
   if [[ -n $ref ]]; then
-    echo " [%{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}]"
+    command git diff --quiet --ignore-submodules HEAD &>/dev/null
+    if (($? == 1)); then
+      echo " %{$fg_bold[red]%}${ref#refs/heads/}+%{$reset_color%}"
+    else 
+      echo " %{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}"
+    fi
   fi
 }
+
 setopt promptsubst
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}$ %{$reset_color%}'
+export PS1='%n@%m:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}$ %{$reset_color%}'
 
 # Include custom completion functions
 fpath=(~/.zsh/completion $fpath)
