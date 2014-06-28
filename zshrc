@@ -73,11 +73,3 @@ export PATH="$HOME/.bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbi
 
 # Include custom config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
-# Auto-attach/create tmux session
-if [[ "$TERM" != 'screen-256color' ]] then
-  if ! tmux has-session -t "$USER"; then
-    tmux new-session -s "$USER" -d
-  fi
-  tmux attach -t "$USER"
-fi
