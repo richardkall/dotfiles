@@ -16,7 +16,7 @@ $ brew bundle
 Install dotfiles:
 
 ```
-$ rcup -d ~/.dotfiles -x README.md
+$ rcup -d ~/.dotfiles -x README.md -x Brewfile
 ```
 
 To update dotfiles, use:
