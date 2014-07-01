@@ -1,21 +1,7 @@
-# Modify the prompt to contain git branch name and check if dirty
-git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null)
-  if [[ -n $ref ]]; then
-    command git diff --quiet --ignore-submodules HEAD &>/dev/null
-    if (($? == 1)); then
-      echo " %{$fg_bold[red]%}${ref#refs/heads/}+%{$reset_color%}"
-    else 
-      echo " %{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}"
-    fi
-  fi
-}
-
-setopt promptsubst
-export PS1='%n@%m:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info) %{$fg[blue]%}$ %{$reset_color%}'
-
-# Include custom completion functions
-fpath=(~/.zsh/completion $fpath)
+# Use Pure (github.com/sindresorhus/pure)
+fpath=(/usr/local/share/zsh/site-functions $fpath)
+autoload -U promptinit && promptinit
+prompt pure
 
 # Use autocomplete
 autoload -U compinit
