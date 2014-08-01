@@ -21,7 +21,7 @@ set splitbelow        " Split windows below current one
 set splitright        " Split windows right of current one
 
 " Ignore pattern
-set wildignore+=*/tmp/*,*/.tmp/*,*/.git/*,*/.sass-cache/*,*.DS_Store,*.keep,*.swp,*.zip
+set wildignore+=*/tmp/*,*/.tmp/*,*/.git/*,*/.sass-cache/*,*.DS_Store,*.keep,*.swp,*.zip,*/.hg/*
 
 " Use space as leader
 let mapleader = " "

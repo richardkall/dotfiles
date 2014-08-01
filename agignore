@@ -1,4 +1,6 @@
 .git
+.hg
+.sass-cache
 log
 tags
 tmp
