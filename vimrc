@@ -49,6 +49,7 @@ augroup general
   autocmd BufRead,BufNewFile *.md setfiletype markdown
   autocmd BufRead,BufNewFile *.ru setfiletype ruby
   autocmd BufRead,BufNewFile Gemfile setfiletype ruby
+  autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
 
   " Set textwidth to 78 characters for text files
   autocmd FileType text setlocal textwidth=78
