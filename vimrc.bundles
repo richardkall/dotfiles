@@ -26,6 +26,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/tComment'
 Plugin 'xenoterracide/html.vim'
 
+call vundle#end()
+
 if filereadable(expand('~/.vimrc.bundles.local'))
   source ~/.vimrc.bundles.local
 endif
