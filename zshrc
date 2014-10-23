@@ -45,7 +45,7 @@ export EDITOR=$VISUAL
 if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 
 # Load NVM
-source $(brew --prefix nvm)/nvm.sh' 1
+source $(brew --prefix nvm)/nvm.sh
 
 # Speed up Ruby tests
 export RUBY_GC_HEAP_INIT_SLOTS=1000000
