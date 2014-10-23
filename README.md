@@ -8,8 +8,8 @@ The following must be installed:
 
 - [Homebrew](http://brew.sh)
 - [zsh](http://zsh.sourceforge.net)
-- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [Pure](http://zsh.sourceforge.net)
+- [rcm](https://github.com/thoughtbot/rcm)
 
 Everything is included in the [laptop script](https://github.com/richardkall/laptop).
 
@@ -22,17 +22,11 @@ Clone repo:
 $ git clone https://github.com/richardkall/dotfiles.git ~/.dotfiles
 ```
 
-Install [rcm](https://github.com/thoughtbot/rcm):
-
-```bash
-$ cd ~/.dotfiles
-$ brew bundle
 ```
-
 Install dotfiles:
 
 ```bash
-$ rcup -d ~/.dotfiles -x README.md -x Brewfile
+$ rcup -d ~/.dotfiles -x README.md
 ```
 
 To update dotfiles, use:
