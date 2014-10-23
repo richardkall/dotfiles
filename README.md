@@ -6,7 +6,6 @@
 
 The following must be installed:
 
-- [Homebrew](http://brew.sh)
 - [zsh](http://zsh.sourceforge.net)
 - [Pure](http://zsh.sourceforge.net)
 - [rcm](https://github.com/thoughtbot/rcm)
