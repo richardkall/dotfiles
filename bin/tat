@@ -1,7 +1,3 @@
 #!/bin/sh
 
-tmux_session_name=`basename $PWD`
-if [[ $tmux_session_name == *.* ]]; then
-  tmux_session_name="${tmux_session_name//[.]/_}"
-fi
-tmux new-session -As $tmux_session_name
+tmux new-session -As "$(basename "$PWD" | tr . -)"

@@ -44,6 +44,9 @@ export EDITOR=$VISUAL
 # Load rbenv if available
 if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 
+# Load NVM
+source $(brew --prefix nvm)/nvm.sh' 1
+
 # Speed up Ruby tests
 export RUBY_GC_HEAP_INIT_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
@@ -52,7 +55,7 @@ export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
 # Set up PATH
-export PATH="$HOME/.bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/share/npm/bin"
+export PATH="$HOME/.bin:$HOME/.rbenv/shims:/usr/local/lib/node_modules:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/share/npm/bin"
 
 # Include aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
