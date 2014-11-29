@@ -37,7 +37,7 @@ alias rk='rake'
 alias s='rspec'
 
 # Middleman
-alias mm='middleman'
+alias mm='bundle exec middleman'
 
 # Include local aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
