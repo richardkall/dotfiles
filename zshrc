@@ -35,7 +35,6 @@ unsetopt nomatch
 
 # Act like Vim
 bindkey -v
-bindkey jj vi-cmd-mode
 
 # Use Vim as visual editor
 export VISUAL=vim

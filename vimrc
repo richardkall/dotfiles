@@ -152,9 +152,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Switch between the last two files
 nnoremap <Leader><Leader> <c-^>
 
-" Exit insert mode quickly
-inoremap jj <Esc>
-
 " Toggle search highlighting
 nnoremap <silent> <Leader>/ :set invhlsearch<CR>
 
