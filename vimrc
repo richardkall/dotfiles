@@ -137,6 +137,7 @@ let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 
 " Syntastic
 let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers = ['eslint']
 
 
 " ---------------------------------------------------------------------
