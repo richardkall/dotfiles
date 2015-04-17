@@ -2,41 +2,31 @@
 
 > My personal set of configuration files.
 
-## Dependencies
+## Requirements
 
 The following must be installed:
 
 - [zsh](http://zsh.sourceforge.net)
-- [Pure](http://zsh.sourceforge.net)
+- [Pure](https://github.com/sindresorhus/pure)
 - [rcm](https://github.com/thoughtbot/rcm)
 
 Everything is included in the [laptop script](https://github.com/richardkall/laptop).
 
-
-## Installation
-
-Clone repo:
+## Install
 
 ```bash
 $ git clone https://github.com/richardkall/dotfiles.git ~/.dotfiles
-```
-
-Install dotfiles:
-
-```bash
 $ rcup -d ~/.dotfiles -x README.md
 ```
 
-To update dotfiles, use:
-
-```bash
-$ rcup
-```
-
-## Local configs
+## Customize
 
 Put your local customizations in the home folder, append their file names with `.local`, and they will be sourced automatically.
 
 ## Extras
 
 Base16 Terminal profiles can be found here: [richardkall/base16-osx](https://github.com/richardkall/base16-osx/)
+
+## License
+
+MIT © [Richard Käll](http://richardkall.se)
