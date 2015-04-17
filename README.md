@@ -16,7 +16,7 @@ Everything is included in the [laptop script](https://github.com/richardkall/lap
 
 ```bash
 $ git clone https://github.com/richardkall/dotfiles.git ~/.dotfiles
-$ rcup -d ~/.dotfiles -x README.md
+$ rcup -d ~/.dotfiles -x README.md -x LICENSE
 ```
 
 ## Customize
