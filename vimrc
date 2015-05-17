@@ -48,6 +48,7 @@ augroup general
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile *.md setfiletype markdown
   autocmd BufRead,BufNewFile *.ru setfiletype ruby
+  autocmd BufRead,BufNewFile .eslintrc setfiletype json
   autocmd BufRead,BufNewFile Gemfile setfiletype ruby
   autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
 
