@@ -21,7 +21,7 @@ set splitbelow        " Split windows below current one
 set splitright        " Split windows right of current one
 
 " Ignore pattern
-set wildignore+=*/tmp/*,*/.tmp/*,*/.git/*,*/.sass-cache/*,*.DS_Store,*.keep,*.swp,*.zip,*/.hg/*
+set wildignore+=*/tmp/*,*/.tmp/*,*/.git/*,*/.sass-cache/*,*.DS_Store,*.keep,*.swp,*.zip,*/.hg/*,*/node_modules/*,*/bower_components/*
 
 " Use space as leader
 let mapleader = " "
@@ -129,13 +129,6 @@ map <silent> <C-d> :NERDTreeToggle<CR>
 " rails.vim
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
-" rspec.vim
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>|
-nnoremap <Leader>s :call RunNearestSpec()<CR>|
-nnoremap <Leader>l :call RunLastSpec()<CR>|
-nnoremap <Leader>a :call RunAllSpecs()<CR>|
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
-
 " Syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['eslint']
@@ -166,12 +159,6 @@ nnoremap <Leader>" :split<cr>
 
 " Insert tab or use autocomplete
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-
-" Index Ctags
-map <Leader>ct :!`brew --prefix`/bin/ctags -R --exclude=.git --exclude=log *<CR>
-
-" Go to Ctag
-nnoremap § <C-]>
 
 
 " ---------------------------------------------------------------------
