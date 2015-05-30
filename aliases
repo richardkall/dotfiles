@@ -3,8 +3,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias e=$EDITOR
 alias l='ls'
-alias lh='ls -Alh'
-alias ll='ls -al'
+alias ll='ls -Alh'
 alias mkdir='mkdir -p'
 alias o='open .'
 
