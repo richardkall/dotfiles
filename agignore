@@ -1,6 +1,8 @@
-.git
+.git/
 .hg
 .sass-cache
+bower_components/
 log
+node_modules/
 tags
 tmp
