@@ -18,11 +18,8 @@
 [credential]
   helper = osxkeychain
 [include]
-  path = .gitconfig.local
+  path = ~/.gitconfig.local
 [merge]
   ff = only
 [push]
   default = current
-[user]
-  name = Richard Käll
-  email = richard.kall@me.com
