@@ -160,6 +160,9 @@ nnoremap <Leader>" :split<cr>
 " Insert tab or use autocomplete
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
+" Quick save
+nnoremap <Leader>w :w<CR>
+
 
 " ---------------------------------------------------------------------
 " FUNCTIONS
