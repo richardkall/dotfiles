@@ -136,6 +136,16 @@ let g:syntastic_javascript_checkers = ['eslint']
 " vim-jsx
 let g:jsx_ext_required = 0
 
+" YouCompleteMe
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+let g:UltiSnipsSnippetDirectories = ['UltiSnips']
+
 
 " ---------------------------------------------------------------------
 " KEY BINDINGS
