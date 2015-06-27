@@ -6,6 +6,7 @@
 
 The following must be installed:
 
+- [CMake](http://www.cmake.org)
 - [zsh](http://zsh.sourceforge.net)
 - [Pure](https://github.com/sindresorhus/pure)
 - [rcm](https://github.com/thoughtbot/rcm)

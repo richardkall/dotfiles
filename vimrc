@@ -157,9 +157,6 @@ nnoremap <silent> <Leader>/ :set invhlsearch<CR>
 nnoremap <Leader>% :vsplit<cr>
 nnoremap <Leader>" :split<cr>
 
-" Insert tab or use autocomplete
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-
 " Quick save
 nnoremap <Leader>w :w<CR>
 
@@ -175,16 +172,6 @@ function! <SID>StripTrailingWhitespace()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
-
-" Determine whether to insert a tab or use autocomplete
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
 
 
 " ---------------------------------------------------------------------
