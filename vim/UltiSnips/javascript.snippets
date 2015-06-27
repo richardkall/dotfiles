@@ -1,9 +1,152 @@
-snippet log
-console.log($1);$0
-endsnippet
-
-snippet func
-var $1 = function ($2) {
+snippet for "for (...) {...}"
+for (var ${1:i} = 0, ${2:len} = ${3:Things.length}; $1 < $2; $1++) {
 	$0
 }
+endsnippet
+
+snippet fun "function (...) {...}"
+function (${1}) {
+	$0
+}
+endsnippet
+
+snippet vf "Function assigned to var"
+var ${1:functionName} = function (${2}) {
+	$0
+};
+endsnippet
+
+snippet timeout "setTimeout function"
+setTimeout(function () {
+	$0
+}, ${1:10});
+endsnippet
+
+snippet fi "for (prop in obj) {...}"
+for (${1:prop} in ${2:obj}) {
+	$0
+}
+endsnippet
+
+snippet ce "console.error"
+console.error(${1:"${2:error}"});
+endsnippet
+
+snippet ci "console.info"
+console.info(${1:"${2:message}"});
+endsnippet
+
+snippet cl "console.log"
+console.log(${1:"${2:message}"});
+endsnippet
+
+snippet cd "console.debug"
+console.debug(${1:"${2:message}"});
+endsnippet
+
+snippet cw "console.warn"
+console.warn(${1:"${2:warning}"});
+endsnippet
+
+snippet desc "describe"
+describe('$1', function () {
+	$0
+});
+endsnippet
+
+snippet if "if"
+if (${1:true}) {
+	${0}
+}
+endsnippet
+
+snippet ife "if/else"
+if (${1:true}) {
+	${2}
+} else {
+	${0}
+}
+endsnippet
+
+snippet ter "Ternary conditional"
+${1:/* condition */} ? ${2:/* if true */} : ${0:/* if false */}
+endsnippet
+
+snippet switch "switch"
+switch (${1:expression}) {
+	case '${3:case}':
+		${4}
+		break;
+	default:
+		${2}
+}
+${0}
+endsnippet
+
+snippet case "case"
+case '${1:case}':
+	${2}
+	break;
+${0}
+endsnippet
+
+snippet try "try/catch"
+try {
+	${1}
+} catch (${2:e}) {
+	${0:/* handle error */}
+}
+endsnippet
+
+snippet ret "return"
+return ${0:result};
+endsnippet
+
+snippet :f
+${1:functionName}: function (${2}) {
+	${3}
+},${0}
+endsnippet
+
+snippet /** "JSDoc"
+/**
+ * ${0:description}
+ *
+ */
+endsnippet
+
+snippet @par "JSDoc @param"
+@param {${1:type}} ${2:name} ${0:description}
+endsnippet
+
+snippet @ret "JSDoc @return"
+@return {${1:type}} ${0:description}
+endsnippet
+
+snippet get "Get elements by tag name"
+getElementsByTagName('${0:tag}')
+endsnippet
+
+snippet get. "Get elements by class name"
+getElementsByClassName('${0:class}')
+endsnippet
+
+snippet get# "Get element by id"
+getElementById('${0:id}')
+endsnippet
+
+snippet us "use strict"
+'use strict';
+endsnippet
+
+snippet v "var x ="
+var ${1} = ${2};
+endsnippet
+
+snippet ex "module.exports = ..."
+module.exports = ${1};
+endsnippet
+
+snippet req "var x = require('...')"
+var ${1} = require('${2}');
 endsnippet
