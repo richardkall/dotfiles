@@ -1,0 +1,39 @@
+"*":
+  "exception-reporting":
+    userId: "1f6d8ded-d27b-39e5-b84e-95714f424379"
+  welcome:
+    showOnStartup: false
+  core:
+    projectHome: "/Users/Richard/Dropbox/Projects"
+    themes: [
+      "one-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+    disabledPackages: [
+      "relative-numbers"
+    ]
+  editor:
+    invisibles: {}
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    fontSize: 15
+    lineHeight: 1.35
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "relative-line-numbers":
+    showNormalLineNumbers: false
+  "tree-view": {}
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+  pigments:
+    groupPaletteColors: "by file"
+    mergeColorDuplicates: true
+  linter: {}
+  "linter-rubocop":
+    executablePath: "/Users/Richard/.rbenv/shims/rubocop"
+  "linter-scss-lint":
+    executablePath: "/Users/Richard/.rbenv/shims/scss-lint"
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+  react: {}
