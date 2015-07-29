@@ -29,23 +29,23 @@ for (${1:prop} in ${2:obj}) {
 endsnippet
 
 snippet ce "console.error"
-console.error(${1:"${2:error}"});
+console.error(${1:'${2:error}'});
 endsnippet
 
 snippet ci "console.info"
-console.info(${1:"${2:message}"});
+console.info(${1:'${2:message}'});
 endsnippet
 
 snippet cl "console.log"
-console.log(${1:"${2:message}"});
+console.log(${1:'${2:message}'});
 endsnippet
 
 snippet cd "console.debug"
-console.debug(${1:"${2:message}"});
+console.debug(${1:'${2:message}'});
 endsnippet
 
 snippet cw "console.warn"
-console.warn(${1:"${2:warning}"});
+console.warn(${1:'${2:warning}'});
 endsnippet
 
 snippet desc "describe"
@@ -143,10 +143,44 @@ snippet v "var x ="
 var ${1} = ${2};
 endsnippet
 
+snippet l "let x ="
+let ${1} = ${2};
+endsnippet
+
+snippet c "const x ="
+const ${1} = ${2};
+endsnippet
+
 snippet ex "module.exports = ..."
 module.exports = ${1};
 endsnippet
 
 snippet req "var x = require('...')"
 var ${1} = require('${2}');
+endsnippet
+
+snippet imp "import x from 'x'"
+import ${1} from '${2}';
+endsnippet
+
+snippet class "class MyClass { ..."
+class ${1:MyClass} {
+	constructor () {
+		${2}
+	}
+}
+endsnippet
+
+snippet rclass "class App extends React.Component ... "
+class ${1:App} extends React.Component {${2:
+	constructor (props) {
+		super(props);
+	}
+	}
+	render () {
+		return (
+			${3}
+		)
+	}
+}
 endsnippet
