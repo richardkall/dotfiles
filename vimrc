@@ -130,7 +130,8 @@ map <silent> <C-d> :NERDTreeToggle<CR>
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
 " Syntastic
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 " vim-jsx
