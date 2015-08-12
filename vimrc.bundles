@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'digitaltoad/vim-jade'
 Plug 'elzr/vim-json'
 Plug 'itspriddle/vim-marked'
 Plug 'jwhitley/vim-matchit'
