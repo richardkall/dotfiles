@@ -11,13 +11,15 @@
     ]
     disabledPackages: [
       "relative-numbers"
+      "timecop"
+      "vim-mode"
     ]
   editor:
     invisibles: {}
     softWrap: true
     softWrapAtPreferredLineLength: true
-    fontSize: 15
-    lineHeight: 1.35
+    fontSize: 14
+    lineHeight: 1.4
   "one-dark-ui":
     layoutMode: "Compact"
   "relative-line-numbers":
@@ -37,3 +39,4 @@
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
   react: {}
+  "linter-eslint": {}
