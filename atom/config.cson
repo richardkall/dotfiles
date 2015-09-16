@@ -18,8 +18,7 @@
     invisibles: {}
     softWrap: true
     softWrapAtPreferredLineLength: true
-    fontSize: 14
-    lineHeight: 1.4
+    fontSize: 15
   "one-dark-ui":
     layoutMode: "Compact"
   "relative-line-numbers":
