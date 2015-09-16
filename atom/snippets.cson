@@ -16,25 +16,3 @@
 # This file uses CoffeeScript Object Notation (CSON).
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
-
-# HTML
-'.text.html':
-  'Script':
-    'prefix': 'script'
-    'body': """
-      <script>
-        $1
-      </script>
-    """
-
-  'Script with source':
-    'prefix': 'scriptsrc'
-    'body': '<script src="$1"></script>'
-
-  'Style':
-    'prefix': 'style'
-    'body': """
-      <style>
-        $1
-      </style>
-    """
