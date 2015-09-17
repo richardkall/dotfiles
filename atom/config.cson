@@ -14,7 +14,6 @@
       "timecop"
       "vim-mode"
     ]
-    excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
       "emmet"
     ]
