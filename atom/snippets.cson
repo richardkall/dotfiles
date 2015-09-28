@@ -16,3 +16,20 @@
 # This file uses CoffeeScript Object Notation (CSON).
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
+
+'.source.js':
+  'import':
+    'prefix': 'imp'
+    'body': 'import $1 from \'${1}\''
+
+  'const':
+    'prefix': 'const'
+    'body': 'const $1 = $2;'
+
+  'let':
+    'prefix': 'let'
+    'body': 'let $1 = $2;'
+
+  'var':
+    'prefix': 'var'
+    'body': 'var $1 = $2;'
