@@ -6,8 +6,8 @@
   core:
     projectHome: "/Users/Richard/Dropbox/Projects"
     themes: [
-      "one-dark-ui"
-      "base16-tomorrow-dark-theme"
+      "spacegray-dark-ui"
+      "oceanic-next"
     ]
     disabledPackages: [
       "relative-numbers"
@@ -33,7 +33,9 @@
   pigments:
     groupPaletteColors: "by file"
     mergeColorDuplicates: true
-  linter: {}
+  linter:
+    showErrorPanel: false
+    lintOnFly: false
   "linter-rubocop":
     executablePath: "/Users/Richard/.rbenv/shims/rubocop"
   "linter-scss-lint":
