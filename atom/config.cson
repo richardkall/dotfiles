@@ -43,5 +43,6 @@
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
   react: {}
-  "linter-eslint": {}
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: true
   emmet: {}
