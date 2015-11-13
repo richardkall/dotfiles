@@ -12,15 +12,12 @@
     disabledPackages: [
       "relative-numbers"
       "timecop"
-      "vim-mode"
     ]
     packagesWithKeymapsDisabled: [
       "emmet"
     ]
   editor:
     invisibles: {}
-    softWrap: true
-    softWrapAtPreferredLineLength: true
     fontSize: 15
   "one-dark-ui":
     layoutMode: "Compact"
