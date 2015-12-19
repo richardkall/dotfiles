@@ -77,6 +77,7 @@ augroup END
 " -------------------------------------------------------------------
 
 set background=dark          " Use dark background
+set colorcolumn=80           " Highlight column 80
 set cursorline               " Highlight current line
 set laststatus=2             " Always display status line
 set list                     " Show whitespace characters
