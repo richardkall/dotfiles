@@ -1,45 +1,49 @@
 "*":
-  "exception-reporting":
-    userId: "1f6d8ded-d27b-39e5-b84e-95714f424379"
-  welcome:
-    showOnStartup: false
   core:
-    projectHome: "/Users/Richard/Dropbox/Projects"
-    themes: [
-      "spacegray-dark-ui"
-      "oceanic-next"
-    ]
     disabledPackages: [
-      "relative-numbers"
       "timecop"
     ]
     packagesWithKeymapsDisabled: [
       "emmet"
     ]
+    projectHome: "/Users/Richard/Projekt"
+    themes: [
+      "spacegray-dark-ui"
+      "oceanic-next"
+    ]
   editor:
-    invisibles: {}
     fontSize: 15
+    invisibles: {}
+  emmet: {}
+  "exception-reporting":
+    userId: "1f6d8ded-d27b-39e5-b84e-95714f424379"
+  "git-plus": {}
+  "keyboard-localization":
+    useKeyboardLayout: "sv_SE"
+  linter:
+    lintOnFly: false
+    showErrorPanel: false
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: true
+  "linter-php": {}
+  "linter-rubocop":
+    command: "/Users/Richard/.rbenv/shims/rubocop"
+  "linter-scss-lint":
+    executablePath: "/Users/Richard/.rbenv/shims/scss-lint"
   "one-dark-ui":
     layoutMode: "Compact"
+  "one-light-ui": {}
+  pigments:
+    groupPaletteColors: "by file"
+    mergeColorDuplicates: true
+  react: {}
   "relative-line-numbers":
     showNormalLineNumbers: false
   "tree-view": {}
   "vim-mode":
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
-  pigments:
-    groupPaletteColors: "by file"
-    mergeColorDuplicates: true
-  linter:
-    showErrorPanel: false
-    lintOnFly: false
-  "linter-rubocop":
-    executablePath: "/Users/Richard/.rbenv/shims/rubocop"
-  "linter-scss-lint":
-    executablePath: "/Users/Richard/.rbenv/shims/scss-lint"
+  welcome:
+    showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-  react: {}
-  "linter-eslint":
-    disableWhenNoEslintrcFileInPath: true
-  emmet: {}
