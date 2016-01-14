@@ -2,11 +2,9 @@
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
   'ctrl-d': 'tree-view:toggle'
 
-'atom-text-editor.vim-mode:not(.insert-mode)':
-  'ctrl-d': 'unset!'
-
 'atom-text-editor[data-grammar="text html basic"]:not([mini]), atom-text-editor[data-grammar~="jade"]:not([mini]), atom-text-editor[data-grammar~="css"]:not([mini]), atom-text-editor[data-grammar~="sass"]:not([mini])':
   'tab': 'emmet:expand-abbreviation-with-tab'
 
 'atom-text-editor.vim-mode:not(.insert-mode)':
   'alt-4': 'vim-mode:move-to-last-character-of-line'
+  'ctrl-d': 'unset!'
