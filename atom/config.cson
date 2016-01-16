@@ -39,7 +39,8 @@
   react: {}
   "relative-line-numbers":
     showNormalLineNumbers: false
-  "tree-view": {}
+  "tree-view":
+    hideIgnoredNames: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
