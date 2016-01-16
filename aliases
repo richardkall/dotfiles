@@ -22,6 +22,8 @@ alias b=bundle
 
 # Docker
 alias docker-init='source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh'
+alias docker-rma='docker rm $(docker ps -a -q)'
+alias docker-rmia='docker rmi $(docker images -q)'
 
 # Include local aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
