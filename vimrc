@@ -19,7 +19,6 @@ set showmatch         " Briefly jump to matching bracket
 set smartcase         " Case sensitive if pattern contains upper case characters
 set splitbelow        " Split windows below current one
 set splitright        " Split windows right of current one
-set textwidth=80      " Wrap at 80 characters
 
 " Ignore pattern
 set wildignore+=*/tmp/*,*/.tmp/*,*/.git/*,*/.sass-cache/*,*.DS_Store,*.keep,*.swp,*.zip,*/.hg/*,*/node_modules/*,*/bower_components/*
