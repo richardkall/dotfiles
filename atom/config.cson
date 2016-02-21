@@ -30,6 +30,8 @@
     command: "/Users/Richard/.rbenv/shims/rubocop"
   "linter-scss-lint":
     executablePath: "/Users/Richard/.rbenv/shims/scss-lint"
+  "linter-stylelint":
+    disableWhenNoConfig: true
   "one-dark-ui":
     layoutMode: "Compact"
   "one-light-ui": {}
