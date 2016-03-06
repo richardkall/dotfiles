@@ -1,22 +1,22 @@
 [alias]
   aa = add --all
   ap = add --patch
-  ca = commit --amend
   ci = commit -v
   co = checkout
-  lg = log --oneline --decorate --graph --date=relative
   st = status
-  w = whatchanged
-[color]
-  ui = auto
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore
-[credential]
-  helper = osxkeychain
 [include]
   path = ~/.gitconfig.local
 [merge]
   ff = only
 [push]
   default = current
+[rebase]
+  autosquash = true
+[user]
+	name = Richard Käll
+	email = richard.kall@me.com
+[color]
+	ui = true

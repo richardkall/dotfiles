@@ -1,8 +1,6 @@
 # Unix
 alias ..='cd ..'
-alias ...='cd ../..'
 alias e=$EDITOR
-alias l='ls'
 alias ll='ls -Alh'
 alias mkdir='mkdir -p'
 alias o='open .'
@@ -10,20 +8,34 @@ alias o='open .'
 # Folders
 alias desktop='cd ~/Desktop'
 alias dotfiles='cd ~/.dotfiles'
-alias dropbox='cd ~/Dropbox'
 alias home='cd ~'
 
 # Show/hide hidden files
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
+# Neovim
+alias vim='nvim'
+alias vi='nvim'
+
 # Bundler
 alias b=bundle
 
-# Docker
-alias docker-init='source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh'
-alias docker-rma='docker rm $(docker ps -a -q)'
-alias docker-rmia='docker rmi $(docker images -q)'
+# Week number
+alias week='date +%V'
 
-# Include local aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+# IP addresses
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias localip='ipconfig getifaddr en0'
+
+# Lock the screen
+alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+
+# Check for software updates, update installed Ruby gems, Homebrew and npm packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm update -g; sudo gem update --system; sudo gem update'
+
+# Empty trash, clear system logs and download history
+alias cleanup="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+# Load local aliases
+[[ -f $HOME/.aliases.local ]] && source $HOME/.aliases.local

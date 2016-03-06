@@ -1,17 +1,11 @@
 " ----------------------------------------------------------------------
 " GENERAL
 " ----------------------------------------------------------------------
-
-set nocompatible      " Use Vim settings (keep at the top!)
 set autowrite         " Autosave files when focus is lost
-set backspace=2       " Make backspace work like in most other apps
-set clipboard=unnamed " Use system clipboard
-set encoding=utf-8    " Set character encoding to UTF-8
-set foldmethod=indent " Fold based on language syntax
+set foldmethod=indent " Fold based on indentation
 set foldlevel=1       " Close all folds except highest level
 set hidden            " Hide buffers instead of closing them
 set ignorecase        " Ignore case in search patterns
-set incsearch         " Use incremental searching
 set matchtime=3       " Speed up showmatch
 set noswapfile        " Disable swapfiles
 set pastetoggle=<F2>  " Toggle paste mode with <F2>
@@ -20,46 +14,24 @@ set smartcase         " Case sensitive if pattern contains upper case characters
 set splitbelow        " Split windows below current one
 set splitright        " Split windows right of current one
 
-" Ignore pattern
-set wildignore+=*/tmp/*,*/.tmp/*,*/.git/*,*/.sass-cache/*,*.DS_Store,*.keep,*.swp,*.zip,*/.hg/*,*/node_modules/*,*/bower_components/*
-
 " Use space as leader
 let mapleader = " "
-
-" Use ag over grep
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" Load plugins
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+" Use ag over grep
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+  let g:ctrlp_use_caching = 0
 endif
-
-" Enable file type detection
-filetype plugin on
 
 augroup general
   autocmd!
 
-  " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile *.md setfiletype markdown
-  autocmd BufRead,BufNewFile *.ru setfiletype ruby
-  autocmd BufRead,BufNewFile .eslintrc setfiletype json
-  autocmd BufRead,BufNewFile Gemfile setfiletype ruby
-  autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
-
-  " Set textwidth to 78 characters for text files
-  autocmd FileType text setlocal textwidth=78
-
-  " Set Git commit messages to 72 characters wide
-  autocmd FileType gitcommit setlocal spell textwidth=72
-
-  " Enable spellchecking for Markdown files
-  autocmd FileType markdown setlocal spell
+  " Run Neomake on save
+  autocmd! BufWritePost *.{css,js} Neomake
 
   " Jump to the last known cursor position, except for commit messages
   autocmd BufReadPost *
@@ -68,18 +40,68 @@ augroup general
     \ endif
 
   " Automatically strip trailing whitespace
-  autocmd FileType php,ruby,javascript,xml,yml,html,js autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
+  autocmd FileType html,javascript,jade,json,php,ruby,xml,yml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
+
+  " Enable spellchecking for Markdown files
+  autocmd FileType markdown setlocal spell
+
+  " Set syntax highlighting for specific file types
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile *.ru,Gemfile,VagrantFile setfiletype ruby
+  autocmd BufRead,BufNewFile .{babel,eslint,stylelint}rc set filetype=json
 augroup END
 
+" ----------------------------------------------------------------------
+" PLUGINS
+" ----------------------------------------------------------------------
+" Load plugins
+if filereadable(expand("~/.config/nvim/plugins.vim"))
+  source ~/.config/nvim/plugins.vim
+endif
+
+" CtrlP
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 0
+
+if executable('ag')
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+  let g:ctrlp_use_caching = 0
+endif
+
+" Neomake
+if findfile('.eslintrc', '.;') !=# ''
+  let g:neomake_javascript_enabled_makers = ['eslint']
+  let g:neomake_jsx_enabled_makers = ['eslint']
+  let g:neomake_javascript_eslint_exe = $PWD . '/node_modules/.bin/eslint'
+endif
+
+if findfile('.stylelintrc', '.;') !=# ''
+  let g:neomake_css_enabled_makers = ['stylelint']
+  let g:neomake_css_stylelint_exe = $PWD . '/node_modules/.bin/stylelint'
+endif
+
+" NeoComplCache
+let g:neocomplcache_enable_at_startup=1
+
+" Neosnippet
+imap <Tab> <Plug>(neosnippet_expand_or_jump)
+smap <Tab> <Plug>(neosnippet_expand_or_jump)
+xmap <Tab> <Plug>(neosnippet_expand_target)
+smap <Tab> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<Tab>"
+
+" NERDTree
+map <silent> <C-d> :NERDTreeToggle<CR>
+
+" vim-jsx
+let g:jsx_ext_required = 0
 
 " -------------------------------------------------------------------
 " UI
 " -------------------------------------------------------------------
-
 set background=dark          " Use dark background
-set colorcolumn=80           " Highlight column 80
+set clipboard=unnamed        " Use system clipboard
 set cursorline               " Highlight current line
-set laststatus=2             " Always display status line
 set list                     " Show whitespace characters
 set listchars=tab:»·,trail:· " Only show tabs and trailing spaces
 set number                   " Show line numbers
@@ -92,76 +114,27 @@ set visualbell               " Use visual bell instead of beeping
 " Customize statusline
 set statusline=%<%f\ %w%h%m%r%*%=%-14.(%l,%c%V%)\ %p%%
 
-" Enable syntax highlighting
-syntax on
-
 " Use base16 color scheme
 colorscheme base16-default
-
 
 " ---------------------------------------------------------------------
 " INDENTATION
 " ---------------------------------------------------------------------
-
 set expandtab    " Convert tabs to spaces
 set shiftwidth=2 " Indent using 2 spaces
 set tabstop=2    " A tab counts for 2 spaces
 
-" Enable language-dependent indenting
+" Enable language-dependent indentation
 filetype indent on
-
-
-" ---------------------------------------------------------------------
-" PLUGIN SETTINGS
-" ---------------------------------------------------------------------
-
-" CtrlP
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_working_path_mode = 0
-
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-  let g:ctrlp_use_caching = 0
-endif
-
-" NERDTree
-map <silent> <C-d> :NERDTreeToggle<CR>
-
-" rails.vim
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-
-" vim-jsx
-let g:jsx_ext_required = 0
-
-" YouCompleteMe
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger = '<Tab>'
-let g:UltiSnipsJumpForwardTrigger = '<Tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-let g:UltiSnipsSnippetDirectories = ['UltiSnips']
-
 
 " ---------------------------------------------------------------------
 " KEY BINDINGS
 " ---------------------------------------------------------------------
-
 " Warn when using arrow keys
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+nnoremap <Left> :echoe 'Use h'<CR>
+nnoremap <Right> :echoe 'Use l'<CR>
+nnoremap <Up> :echoe 'Use k'<CR>
+nnoremap <Down> :echoe 'Use j'<CR>
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <c-^>
@@ -176,11 +149,9 @@ nnoremap <Leader>" :split<cr>
 " Quick save
 nnoremap <Leader>w :w<CR>
 
-
 " ---------------------------------------------------------------------
 " FUNCTIONS
 " ---------------------------------------------------------------------
-
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespace()
   let l = line(".")
@@ -189,11 +160,9 @@ function! <SID>StripTrailingWhitespace()
   call cursor(l, c)
 endfun
 
-
 " ---------------------------------------------------------------------
 " LOCAL CONFIG
 " ---------------------------------------------------------------------
-
-if filereadable($HOME . '/.vimrc.local')
-  source ~/.vimrc.local
+if filereadable($HOME . '~/.nvim.local')
+  source ~/.nvim.local
 endif

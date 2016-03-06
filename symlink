@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+excludes=(
+  '.DS_Store'
+  'bootstrap'
+  'LICENSE'
+  'README.md'
+  'symlink'
+)
+
+exclude () {
+  for e in "${excludes[@]}"; do
+    if [ $e == $1 ]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+for i in $HOME/.dotfiles/*; do
+  FILE=`basename $i`
+  BASEFILE=$HOME/.$FILE
+
+  exclude $FILE && continue
+
+  if [ -f $BASEFILE -o -h $BASEFILE ]; then
+    echo "Replacing file: $BASEFILE"
+    rm $BASEFILE
+  else
+    echo "Creating link: $BASEFILE"
+  fi
+
+  ln -s $i $BASEFILE
+done

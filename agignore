@@ -1,8 +1,8 @@
 .git
 .hg
+.idea
 .sass-cache
 bower_components
-log
+build
 node_modules
-tags
 tmp

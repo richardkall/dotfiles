@@ -2,27 +2,30 @@
 
 > My personal set of configuration files.
 
-## Requirements
-
-The following must be installed:
-
-- [CMake](http://www.cmake.org)
-- [zsh](http://zsh.sourceforge.net)
-- [Pure](https://github.com/sindresorhus/pure)
-- [rcm](https://github.com/thoughtbot/rcm)
-
-Everything is included in the [laptop script](https://github.com/richardkall/laptop).
-
-## Install
+## Setup
 
 ```bash
 $ git clone https://github.com/richardkall/dotfiles.git ~/.dotfiles
-$ rcup -d ~/.dotfiles -x README.md -x LICENSE
+$ sh ~/.dotfiles/bootstrap
+```
+
+When adding any new dotfiles, symlink them using:
+
+```bash
+$ sh ~/.dotfiles/symlink
 ```
 
 ## Customize
 
-Put your local customizations in the home folder, append their file names with `.local`, and they will be sourced automatically.
+Add any local customizations to:
+
+- `~/.aliases.local`
+- `~/.gitconfig.local`
+- `~/.nvim.local`
+- `~/.nvim.plugins.local`
+- `~/.zshrc.local`
+
+For a faster shell startup time, see https://gist.github.com/richardkall/0881b808289fc86ed582.
 
 ## License
 
