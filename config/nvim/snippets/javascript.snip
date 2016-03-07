@@ -1,0 +1,23 @@
+snippet console.log
+abbr console.log
+alias cl log
+options head
+  console.log(${1});
+
+snippet const
+abbr const
+options head
+  const ${1} = ${2};
+
+snippet function
+abbr function
+alias fun 
+options word
+  function ${1:#:function_name} (${2:#:argument}) {
+    ${0:TARGET}
+  }
+
+snippet let
+abbr let
+options head
+  let ${1} = ${2};

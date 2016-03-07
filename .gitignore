@@ -1,3 +1,5 @@
-config/*
-!config/nvim/init.vim
-!config/nvim/plugins.vim
+*.vim-rplugin~
+.netrwhist
+config/configstore
+config/nvim/autoload
+config/nvim/plugins
