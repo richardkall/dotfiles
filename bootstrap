@@ -14,7 +14,7 @@ info 'Installing Homebrew'
   brew update
 
 info 'Installing Homebrew packages'
-  brew install git heroku-toolbelt neovim/neovim/neovim rbenv ruby-build the_silver_searcher zsh zsh-syntax-highlighting
+  brew install git heroku-toolbelt neovim/neovim/neovim rbenv ruby-build the_silver_searcher tmux zsh zsh-syntax-highlighting
 
 info 'Setting zsh as default shell'
   grep -q -F '/usr/local/bin/zsh' /etc/shells || sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
@@ -57,9 +57,6 @@ info 'Install vim-plug'
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 info 'Setting Mac OS X defaults'
-  source osx/defaults
-
-info 'Setting up Terminal'
-  source osx/terminal
+  source osx
 
 info 'Done! Please logout for changes to take effect.'
