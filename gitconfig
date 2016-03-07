@@ -4,6 +4,7 @@
   ca = commit --amend
   ci = commit -v
   co = checkout
+  lg = log --oneline --decorate --graph --date=relative
   st = status
 [core]
   autocrlf = input
