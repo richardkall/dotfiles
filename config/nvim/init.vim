@@ -84,6 +84,7 @@ endif
 let g:neocomplcache_enable_at_startup=1
 
 " Neosnippet
+let g:neosnippet#disable_runtime_snippets={'_': 1}
 imap <Tab> <Plug>(neosnippet_expand_or_jump)
 smap <Tab> <Plug>(neosnippet_expand_or_jump)
 xmap <Tab> <Plug>(neosnippet_expand_target)
