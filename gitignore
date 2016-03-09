@@ -2,4 +2,7 @@
 .bundle
 .DS_Store
 .idea
+atom/.apm
+atom/packages
+atom/projects.cson
 tmp/**/*

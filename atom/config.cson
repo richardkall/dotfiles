@@ -1,0 +1,64 @@
+"*":
+  "autocomplete-plus": {}
+  core:
+    disabledPackages: [
+      "language-c"
+      "language-clojure"
+      "language-coffee-script"
+      "language-csharp"
+      "language-go"
+      "language-java"
+      "language-less"
+      "language-mustache"
+      "language-objective-c"
+      "language-perl"
+      "archive-view"
+      "background-tips"
+      "bookmarks"
+      "exception-reporting"
+      "keybinding-resolver"
+      "autosave"
+      "language-toml"
+      "metrics"
+      "package-generator"
+      "styleguide"
+      "welcome"
+    ]
+    openEmptyEditorOnStart: false
+    themes: [
+      "spacegray-dark-ui"
+      "oceanic-next"
+    ]
+  editor:
+    fontSize: 15
+    invisibles: {}
+    showInvisibles: true
+  "exception-reporting":
+    userId: "89279904-fd73-8382-5396-12a2649ba1ba"
+  "find-and-replace":
+    closeFindPanelAfterSearch: true
+    focusEditorAfterSearch: true
+  "fuzzy-finder": {}
+  "git-diff": {}
+  "grammar-selector": {}
+  linter:
+    showErrorPanel: false
+    showProviderName: false
+  "linter-eslint": {}
+  "markdown-preview":
+    useGitHubStyle: true
+  "merge-conflicts": {}
+  "one-dark-ui": {}
+  pigments: {}
+  "spell-check": {}
+  "status-bar": {}
+  tabs: {}
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
+".css.source":
+  editor:
+    tabLength: 2
+".sass.source":
+  editor:
+    tabLength: 4
