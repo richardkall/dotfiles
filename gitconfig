@@ -18,7 +18,9 @@
 [rebase]
   autosquash = true
 [user]
-	name = Richard Käll
-	email = richard.kall@me.com
+  name = Richard Käll
+  email = richard.kall@me.com
 [color]
-	ui = true
+  ui = true
+[credential]
+  helper = osxkeychain
