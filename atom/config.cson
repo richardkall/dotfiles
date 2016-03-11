@@ -37,7 +37,6 @@
     userId: "89279904-fd73-8382-5396-12a2649ba1ba"
   "find-and-replace":
     closeFindPanelAfterSearch: true
-    focusEditorAfterSearch: true
   "fuzzy-finder": {}
   "git-diff": {}
   "grammar-selector": {}
