@@ -58,6 +58,6 @@
 ".css.source":
   editor:
     tabLength: 2
-".sass.source":
+".scss.source":
   editor:
     tabLength: 4
