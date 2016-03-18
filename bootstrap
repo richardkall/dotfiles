@@ -47,8 +47,8 @@ ask 'Which Node version do you want to install?'
   nvm install "$REPLY"
   nvm alias default "$REPLY"
 
-info 'Installing global Node modules'
-  npm install -g pure-prompt vmd
+info 'Installing Pure prompt'
+  npm install -g pure-prompt
 
 info 'Symlinking dotfiles'
   sh symlink
