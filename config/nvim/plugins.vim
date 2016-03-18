@@ -17,7 +17,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
 Plug 'Shougo/neocomplcache.vim'
-Plug 'Shougo/neosnippet.vim'
 Plug 'skwp/greplace.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
