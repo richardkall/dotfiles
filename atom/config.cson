@@ -25,10 +25,6 @@
       "welcome"
     ]
     openEmptyEditorOnStart: false
-    themes: [
-      "spacegray-dark-ui"
-      "oceanic-next"
-    ]
   editor:
     fontSize: 15
     invisibles: {}
