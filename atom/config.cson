@@ -49,6 +49,9 @@
   "spell-check": {}
   "status-bar": {}
   tabs: {}
+  "theme-switcher":
+    syntaxThemeOne: "one-dark-syntax"
+    syntaxThemeTwo: "one-light-syntax"
   "tree-view": {}
   welcome:
     showOnStartup: false
