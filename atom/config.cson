@@ -27,7 +27,8 @@
     openEmptyEditorOnStart: false
   editor:
     fontSize: 15
-    invisibles: {}
+    invisibles:
+      eol: " "
     showInvisibles: true
   "exception-reporting":
     userId: "89279904-fd73-8382-5396-12a2649ba1ba"
