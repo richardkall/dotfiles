@@ -142,6 +142,9 @@ nnoremap <Leader>" :split<cr>
 " Quick save
 nnoremap <Leader>w :w<CR>
 
+" Hack to get C-h working in NeoVim
+nnoremap <BS> <C-W>h
+
 " ---------------------------------------------------------------------
 " FUNCTIONS
 " ---------------------------------------------------------------------
