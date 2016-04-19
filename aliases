@@ -21,6 +21,12 @@ alias vi='nvim'
 # Bundler
 alias b=bundle
 
+# Tmux
+alias tn='tmux new -s'
+alias ta='tmux a -t'
+alias tls='tmux ls'
+alias tk='tmux kill-session -t'
+
 # Week number
 alias week='date +%V'
 
