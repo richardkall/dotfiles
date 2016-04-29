@@ -25,6 +25,10 @@
       "welcome"
     ]
     openEmptyEditorOnStart: false
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
   editor:
     fontSize: 15
     invisibles:
@@ -52,7 +56,9 @@
   "theme-switcher":
     syntaxThemeOne: "one-dark-syntax"
     syntaxThemeTwo: "one-light-syntax"
-  "tree-view": {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
 ".css.source":
