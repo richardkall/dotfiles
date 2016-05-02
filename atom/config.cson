@@ -45,6 +45,8 @@
     showErrorPanel: false
     showProviderName: false
   "linter-eslint": {}
+  "linter-stylelint":
+    disableWhenNoConfig: true
   "markdown-preview":
     useGitHubStyle: true
   "merge-conflicts": {}
