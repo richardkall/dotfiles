@@ -23,12 +23,19 @@
       "package-generator"
       "styleguide"
       "welcome"
+      "linter-stylelint"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "node_modules"
+      ".meteor"
     ]
     openEmptyEditorOnStart: false
-    themes: [
-      "one-light-ui"
-      "one-light-syntax"
-    ]
   editor:
     fontSize: 15
     invisibles:
@@ -36,6 +43,8 @@
     showInvisibles: true
   "exception-reporting":
     userId: "89279904-fd73-8382-5396-12a2649ba1ba"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
   "find-and-replace":
     closeFindPanelAfterSearch: true
   "fuzzy-finder": {}
@@ -43,7 +52,6 @@
   "grammar-selector": {}
   linter:
     showErrorPanel: false
-    showProviderName: false
   "linter-eslint": {}
   "linter-stylelint":
     disableWhenNoConfig: true
