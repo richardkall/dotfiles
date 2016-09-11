@@ -1,3 +1,0 @@
-'.platform-darwin':
-  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
-  'ctrl-d': 'tree-view:toggle'
