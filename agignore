@@ -1,8 +1,0 @@
-.git
-.hg
-.idea
-.sass-cache
-bower_components
-build
-node_modules
-tmp

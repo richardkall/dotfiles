@@ -20,13 +20,6 @@ let mapleader = " "
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" Use ag over grep
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-  let g:ctrlp_use_caching = 0
-endif
-
 augroup general
   autocmd!
 
@@ -62,11 +55,6 @@ endif
 " CtrlP
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 0
-
-if executable('ag')
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-  let g:ctrlp_use_caching = 0
-endif
 
 " Neomake
 if findfile('.eslintrc', '.;') !=# ''

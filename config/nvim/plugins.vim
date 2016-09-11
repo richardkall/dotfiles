@@ -14,7 +14,6 @@ Plug 'kristijanhusak/vim-multiple-cursors'
 Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
 Plug 'Shougo/neocomplcache.vim'
 Plug 'skwp/greplace.vim'
