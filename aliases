@@ -21,6 +21,9 @@ alias vi='nvim'
 # Bundler
 alias b=bundle
 
+# MongoDB
+alias startmongo=mongod --config /usr/local/etc/mongod.conf
+
 # Tmux
 alias tn='tmux new -s'
 alias ta='tmux a -t'
