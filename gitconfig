@@ -11,8 +11,6 @@
   excludesfile = ~/.gitignore
 [include]
   path = ~/.gitconfig.local
-[merge]
-  ff = only
 [push]
   default = current
 [rebase]
