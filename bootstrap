@@ -14,7 +14,7 @@ info 'Installing Homebrew'
   brew update
 
 info 'Installing Homebrew packages'
-  brew install git heroku-toolbelt rbenv ruby-build tmux zsh zsh-syntax-highlighting
+  brew install git heroku-toolbelt tmux zsh zsh-syntax-highlighting
 
 info 'Setting zsh as default shell'
   grep -q -F '/usr/local/bin/zsh' /etc/shells || sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
@@ -24,19 +24,6 @@ info 'Setting up git'
   git config --global user.name 'Richard Käll'
   git config --global user.email 'richard.kall@me.com'
   git config --global color.ui true
-
-info 'Setting up rbenv'
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init - zsh)"
-
-ask 'Which Ruby version do you want to install?'
-  rbenv install -s "$REPLY"
-  rbenv global "$REPLY"
-  rbenv rehash
-
-info 'Installing Bundler'
-  gem update --system
-  gem install bundler --no-document
 
 ask 'Which nvm version do you want to install?'
   curl -o- "https://raw.githubusercontent.com/creationix/nvm/v$REPLY/install.sh" | zsh

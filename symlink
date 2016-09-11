@@ -6,7 +6,6 @@ excludes=(
   'LICENSE'
   'README.md'
   'symlink'
-  'terminal'
 )
 
 exclude () {
