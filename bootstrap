@@ -14,7 +14,7 @@ info 'Installing Homebrew'
   brew update
 
 info 'Installing Homebrew packages'
-  brew install git heroku-toolbelt neovim/neovim/neovim rbenv ruby-build tmux zsh zsh-syntax-highlighting
+  brew install git heroku-toolbelt rbenv ruby-build tmux zsh zsh-syntax-highlighting
 
 info 'Setting zsh as default shell'
   grep -q -F '/usr/local/bin/zsh' /etc/shells || sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
@@ -54,6 +54,6 @@ info 'Symlinking dotfiles'
   sh symlink
 
 info 'Install vim-plug'
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 info 'Done! Please logout for changes to take effect.'

@@ -27,8 +27,8 @@ unsetopt nomatch
 # Enable colored output from ls, etc.
 export CLICOLOR=1
 
-# Use Neovim as editor
-export EDITOR=nvim
+# Use vim as editor
+export EDITOR=vim
 export VISUAL=$EDITOR
 
 # Enable syntax highlighting

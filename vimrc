@@ -23,15 +23,6 @@ let g:html_indent_tags = 'li\|p'
 augroup general
   autocmd!
 
-  " Run Neomake on save
-  autocmd! BufWritePost *.{css,js} Neomake
-
-  " Jump to the last known cursor position, except for commit messages
-  autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
   " Automatically strip trailing whitespace
   autocmd FileType html,javascript,jade,json,php,ruby,xml,yml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
 
@@ -48,28 +39,31 @@ augroup END
 " PLUGINS
 " ----------------------------------------------------------------------
 " Load plugins
-if filereadable(expand("~/.config/nvim/plugins.vim"))
-  source ~/.config/nvim/plugins.vim
-endif
+call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'elzr/vim-json'
+Plug 'jiangmiao/auto-pairs'
+Plug 'jwhitley/vim-matchit'
+Plug 'mxw/vim-jsx'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
+Plug 'skwp/greplace.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+call plug#end()
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 0
-
-" Neomake
-if findfile('.eslintrc', '.;') !=# ''
-  let g:neomake_javascript_enabled_makers = ['eslint']
-  let g:neomake_jsx_enabled_makers = ['eslint']
-  let g:neomake_javascript_eslint_exe = $PWD . '/node_modules/.bin/eslint'
-endif
-
-if findfile('.stylelintrc', '.;') !=# ''
-  let g:neomake_css_enabled_makers = ['stylelint']
-  let g:neomake_css_stylelint_exe = $PWD . '/node_modules/.bin/stylelint'
-endif
-
-" NeoComplCache
-let g:neocomplcache_enable_at_startup=1
 
 " NERDTree
 map <silent> <C-d> :NERDTreeToggle<CR>
@@ -96,7 +90,7 @@ set visualbell               " Use visual bell instead of beeping
 set statusline=%<%f\ %w%h%m%r%*%=%-14.(%l,%c%V%)\ %p%%
 
 " Use base16 color scheme
-colorscheme base16-default
+colorscheme base16-default-dark
 
 " ---------------------------------------------------------------------
 " INDENTATION
@@ -130,9 +124,6 @@ nnoremap <Leader>" :split<cr>
 " Quick save
 nnoremap <Leader>w :w<CR>
 
-" Hack to get C-h working in NeoVim
-nnoremap <BS> <C-W>h
-
 " ---------------------------------------------------------------------
 " FUNCTIONS
 " ---------------------------------------------------------------------
@@ -147,6 +138,6 @@ endfun
 " ---------------------------------------------------------------------
 " LOCAL CONFIG
 " ---------------------------------------------------------------------
-if filereadable($HOME . '~/.nvim.local')
-  source ~/.nvim.local
+if filereadable($HOME . '~/.vimrc.local')
+  source ~/.vimrc.local
 endif
