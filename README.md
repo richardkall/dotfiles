@@ -21,8 +21,8 @@ Add any local customizations to:
 
 - `~/.aliases.local`
 - `~/.gitconfig.local`
-- `~/.nvim.local`
-- `~/.nvim.plugins.local`
+- `~/.tmux.conf.local`
+- `~/.vimrc.local`
 - `~/.zshrc.local`
 
 For a faster shell startup time, see https://gist.github.com/richardkall/0881b808289fc86ed582.
