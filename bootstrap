@@ -21,8 +21,8 @@ info 'Setting zsh as default shell'
   chsh -s /usr/local/bin/zsh
 
 info 'Setting up git'
-  git config --global user.name "Richard Käll"
-  git config --global user.email "richard.kall@me.com"
+  git config --global user.name 'Richard Käll'
+  git config --global user.email 'richard.kall@me.com'
   git config --global color.ui true
 
 info 'Setting up rbenv'
@@ -55,8 +55,5 @@ info 'Symlinking dotfiles'
 
 info 'Install vim-plug'
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-info 'Setting Mac OS X defaults'
-  source osx
 
 info 'Done! Please logout for changes to take effect.'
