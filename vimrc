@@ -2,6 +2,7 @@
 " GENERAL
 " ----------------------------------------------------------------------
 set autowrite         " Autosave files when focus is lost
+set encoding=utf-8    " Use UTF-8
 set foldmethod=indent " Fold based on indentation
 set foldlevel=1       " Close all folds except highest level
 set hidden            " Hide buffers instead of closing them
