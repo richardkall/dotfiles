@@ -76,7 +76,6 @@ let g:jsx_ext_required = 0
 " UI
 " -------------------------------------------------------------------
 set background=dark          " Use dark background
-set clipboard=unnamed        " Use system clipboard
 set cursorline               " Highlight current line
 set list                     " Show whitespace characters
 set listchars=tab:»·,trail:· " Only show tabs and trailing spaces
@@ -86,6 +85,10 @@ set ruler                    " Show cursor position
 set scrolloff=3              " Keep 3 lines above/below the cursor when scrolling
 set showcmd                  " Show info about current command
 set visualbell               " Use visual bell instead of beeping
+
+if $TMUX == ''
+  set clipboard+=unnamed     " Use system clipboard
+endif
 
 " Customize statusline
 set statusline=%<%f\ %w%h%m%r%*%=%-14.(%l,%c%V%)\ %p%%
