@@ -17,8 +17,8 @@ alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killa
 # Bundler
 alias b=bundle
 
-# MongoDB
-alias startmongo=mongod --config /usr/local/etc/mongod.conf
+# Simple HTTP Server
+alias serve='python -m SimpleHTTPServer 8000'
 
 # Tmux
 alias tn='tmux new -s'
