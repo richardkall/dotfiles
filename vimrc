@@ -14,7 +14,7 @@ set showmatch         " Briefly jump to matching bracket
 set smartcase         " Case sensitive if pattern contains upper case characters
 set splitbelow        " Split windows below current one
 set splitright        " Split windows right of current one
-
+set backspace=2       " Backspace work like most other apps
 " Use space as leader
 let mapleader = " "
 
