@@ -1,6 +1,8 @@
+# Set locale
+export LANG=sv_SE.UTF-8
+
 # Use Pure (github.com/sindresorhus/pure)
 autoload -U promptinit && promptinit
-PURE_PROMPT_SYMBOL=$
 prompt pure
 
 # Use autocomplete
