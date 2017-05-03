@@ -21,7 +21,6 @@ Add any local customizations to:
 
 - `~/.aliases.local`
 - `~/.gitconfig.local`
-- `~/.tmux.conf.local`
 - `~/.vimrc.local`
 - `~/.zshrc.local`
 
