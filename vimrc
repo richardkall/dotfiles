@@ -42,9 +42,6 @@ augroup END
 " ----------------------------------------------------------------------
 " Load plugins
 call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elzr/vim-json'
@@ -77,25 +74,18 @@ let g:jsx_ext_required = 0
 " UI
 " -------------------------------------------------------------------
 set background=dark          " Use dark background
-set cursorline               " Highlight current line
+" set cursorline               " Highlight current line
 set list                     " Show whitespace characters
 set listchars=tab:»·,trail:· " Only show tabs and trailing spaces
-set number                   " Show line numbers
-set relativenumber           " Show relative line numbers
+" set number                   " Show line numbers
+" set relativenumber           " Show relative line numbers
 set ruler                    " Show cursor position
 set scrolloff=3              " Keep 3 lines above/below the cursor when scrolling
 set showcmd                  " Show info about current command
 set visualbell               " Use visual bell instead of beeping
 
-if $TMUX == ''
-  set clipboard+=unnamed     " Use system clipboard
-endif
-
 " Customize statusline
 set statusline=%<%f\ %w%h%m%r%*%=%-14.(%l,%c%V%)\ %p%%
-
-" Use base16 color scheme
-colorscheme base16-default-dark
 
 " ---------------------------------------------------------------------
 " INDENTATION

@@ -20,18 +20,8 @@ alias b=bundle
 # Simple HTTP Server
 alias serve='python -m SimpleHTTPServer 8000'
 
-# Tmux
-alias tn='tmux new -s'
-alias ta='tmux a -t'
-alias tls='tmux ls'
-alias tk='tmux kill-session -t'
-
 # Week number
 alias week='date +%V'
-
-# IP addresses
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias localip='ipconfig getifaddr en0'
 
 # Lock the screen
 alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'

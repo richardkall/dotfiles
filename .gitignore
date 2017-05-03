@@ -1,6 +1,0 @@
-*.vim-rplugin~
-.netrwhist
-config/configstore
-config/nvim/autoload
-config/nvim/plugins
-config/heroku
