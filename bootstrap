@@ -14,7 +14,7 @@ info 'Installing Homebrew'
   brew update
 
 info 'Installing Homebrew packages'
-  brew install direnv git heroku-toolbelt vim zsh zsh-syntax-highlighting
+  brew install git heroku-toolbelt vim zsh zsh-syntax-highlighting
 
 info 'Setting zsh as default shell'
   grep -q -F '/usr/local/bin/zsh' /etc/shells || sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'

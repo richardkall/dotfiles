@@ -45,9 +45,6 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
-# Use direnv
-eval "$(direnv hook zsh)"
-
 # Load aliases
 [[ -f $HOME/.aliases ]] && source $HOME/.aliases
 
