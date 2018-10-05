@@ -32,5 +32,8 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew c
 # Empty trash, clear system logs and download history
 alias cleanup="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
+# Set Git language to English
+alias git="LC_ALL=en_US git"
+
 # Load local aliases
 [[ -f $HOME/.aliases.local ]] && source $HOME/.aliases.local
