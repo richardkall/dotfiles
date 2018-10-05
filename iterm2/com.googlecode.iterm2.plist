@@ -8,6 +8,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Snazzy</key>
@@ -478,7 +480,7 @@
 		</dict>
 	</dict>
 	<key>HideActivityIndicator</key>
-	<false/>
+	<true/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
@@ -493,6 +495,8 @@
 	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.dotfiles/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -533,12 +537,20 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>1594 421 445 381 0 0 2560 1440 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>650 516 620 392 0 0 1920 1080 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>2675 -316 606 469 2560 -372 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>911 428 796 473 0 0 2560 1440 </string>
+	<string>579 627 918 416 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3159 -44 712 207 2560 -372 1440 900 </string>
+	<string>0 0 730 477 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>343 203 650 429 0 0 2560 1440 </string>
+	<string>200 0 730 477 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>0 3 730 477 0 0 1920 1058 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1288,8 +1300,14 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>515491649.638542</real>
+	<key>OnlyWhenMoreTabs</key>
+	<true/>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1325,6 +1343,10 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/Richard/.dotfiles/iterm2</string>
+	<key>Print In Black And White</key>
+	<true/>
+	<key>PromptOnQuit</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1334,7 +1356,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-03T08:40:25Z</date>
+	<date>2017-11-28T13:00:05Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1355,7 +1377,9 @@
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.beta.3</string>
+	<string>3.1.5</string>
 </dict>
 </plist>
