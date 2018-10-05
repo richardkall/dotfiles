@@ -6,11 +6,10 @@
   co = checkout
   lg = log --oneline --decorate --graph --date=relative
   st = status
+  change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore
-[include]
-  path = ~/.gitconfig.local
 [merge]
   ff = only
 [push]
@@ -24,3 +23,5 @@
   ui = true
 [credential]
   helper = osxkeychain
+[include]
+  path = ~/.gitconfig.local
