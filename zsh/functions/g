@@ -1,8 +1,8 @@
 g() {
   if [[ $# > 0 ]]; then
-    git $@
+    LC_ALL=en_US git $@
   else
-    git status -sb
+    LC_ALL=en_US git status -sb
   fi
 }
 

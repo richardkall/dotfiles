@@ -14,12 +14,11 @@ info 'Installing Homebrew'
   brew update
 
 info 'Installing Homebrew packages'
-  brew install git heroku-toolbelt vim zsh zsh-syntax-highlighting
+  brew install git heroku-toolbelt Schniz/tap/fnm vim zsh-syntax-highlighting
   brew install yarn --without-node
 
 info 'Setting zsh as default shell'
-  grep -q -F '/usr/local/bin/zsh' /etc/shells || sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
-  chsh -s /usr/local/bin/zsh
+  chsh -s /bin/zsh
 
 info 'Setting up git'
   git config --global user.name 'Richard Käll'

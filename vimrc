@@ -50,7 +50,7 @@ Plug 'jwhitley/vim-matchit'
 Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'skwp/greplace.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'

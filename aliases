@@ -14,26 +14,20 @@ alias home='cd ~'
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
-# Bundler
-alias b=bundle
-
 # Simple HTTP Server
 alias serve='python -m SimpleHTTPServer 8000'
 
 # Week number
 alias week='date +%V'
 
-# Lock the screen
-alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-
-# Check for software updates, update installed Ruby gems, Homebrew and npm packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm update -g; sudo gem update --system; sudo gem update'
-
 # Empty trash, clear system logs and download history
 alias cleanup="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 # Set Git language to English
 alias git="LC_ALL=en_US git"
+
+# Use fnm instead of nvm
+alias nvm="fnm"
 
 # Load local aliases
 [[ -f $HOME/.aliases.local ]] && source $HOME/.aliases.local

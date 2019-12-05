@@ -36,9 +36,8 @@ export VISUAL=$EDITOR
 # Enable syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Initialize nvm
-export NVM_DIR=$HOME/.nvm
-source $NVM_DIR/nvm.sh
+# Initialize fnm
+eval "$(fnm env --multi)"
 
 # Load custom functions
 for function in ~/.zsh/functions/*; do
