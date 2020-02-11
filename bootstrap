@@ -15,24 +15,16 @@ info 'Installing Homebrew'
 
 info 'Installing Homebrew packages'
   brew install git heroku-toolbelt Schniz/tap/fnm vim zsh-syntax-highlighting
-  brew install yarn --without-node
 
 info 'Setting zsh as default shell'
   chsh -s /bin/zsh
 
-info 'Setting up git'
-  git config --global user.name 'Richard Käll'
-  git config --global user.email 'richard.kall@me.com'
-  git config --global color.ui true
-
-ask 'Which nvm version do you want to install?'
-  curl -o- "https://raw.githubusercontent.com/creationix/nvm/v$REPLY/install.sh" | zsh
-  export NVM_DIR=$HOME/.nvm
-  source $NVM_DIR/nvm.sh
-
 ask 'Which Node version do you want to install?'
-  nvm install "$REPLY"
-  nvm alias default "$REPLY"
+  fnm install "$REPLY"
+  fnm default "$REPLY"
+
+info 'Installing Yarn'
+  npm install -g yarn
 
 info 'Installing Pure prompt'
   npm install -g pure-prompt
