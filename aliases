@@ -9,6 +9,7 @@ alias o='open .'
 alias desktop='cd ~/Desktop'
 alias dotfiles='cd ~/.dotfiles'
 alias home='cd ~'
+alias pro='cd ~/Projekt'
 
 # Show/hide hidden files
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
