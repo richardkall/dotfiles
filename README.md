@@ -24,8 +24,6 @@ Add any local customizations to:
 - `~/.vimrc.local`
 - `~/.zshrc.local`
 
-For a faster shell startup time, see https://gist.github.com/richardkall/0881b808289fc86ed582.
-
 ## License
 
 MIT © [Richard Käll](http://richardkall.se)
