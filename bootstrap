@@ -14,7 +14,7 @@ info 'Installing Homebrew'
   brew update
 
 info 'Installing Homebrew packages'
-  brew install git heroku-toolbelt Schniz/tap/fnm vim zsh-syntax-highlighting
+  brew tap heroku/brew && brew install git heroku-toolbelt Schniz/tap/fnm vim zsh-syntax-highlighting
 
 info 'Setting zsh as default shell'
   chsh -s /bin/zsh
