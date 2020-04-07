@@ -14,17 +14,11 @@ info 'Installing Homebrew'
   brew update
 
 info 'Installing Homebrew packages'
-  brew tap heroku/brew && brew install git heroku-toolbelt Schniz/tap/fnm vim zsh-syntax-highlighting
-
-info 'Setting zsh as default shell'
-  chsh -s /bin/zsh
+  brew tap heroku/brew && brew install git heroku-toolbelt Schniz/tap/fnm vim yarn zsh-syntax-highlighting
 
 ask 'Which Node version do you want to install?'
   fnm install "$REPLY"
   fnm default "$REPLY"
-
-info 'Installing Yarn'
-  npm install -g yarn
 
 info 'Installing Pure prompt'
   npm install -g pure-prompt
