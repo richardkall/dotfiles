@@ -10,8 +10,6 @@
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore
-[merge]
-  ff = only
 [push]
   default = current
 [rebase]
