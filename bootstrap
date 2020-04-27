@@ -14,7 +14,7 @@ info 'Installing Homebrew'
   brew update
 
 info 'Installing Homebrew packages'
-  brew tap heroku/brew && brew install git heroku-toolbelt Schniz/tap/fnm vim yarn zsh-syntax-highlighting
+  brew tap heroku/brew && brew install git heroku Schniz/tap/fnm vim yarn zsh-syntax-highlighting
 
 ask 'Which Node version do you want to install?'
   fnm install "$REPLY"
