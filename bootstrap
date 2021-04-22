@@ -10,11 +10,11 @@ info () {
 }
 
 info 'Installing Homebrew'
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew update
 
 info 'Installing Homebrew packages'
-  brew tap heroku/brew && brew install git heroku Schniz/tap/fnm vim yarn zsh-syntax-highlighting
+  brew install git fnm vim yarn zsh-syntax-highlighting
 
 ask 'Which Node version do you want to install?'
   fnm install "$REPLY"
