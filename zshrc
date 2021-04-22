@@ -39,6 +39,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Initialize fnm
 eval "$(fnm env)"
 
+# Autocomplete for kubectl
+source <(kubectl completion zsh)
+
 # Load custom functions
 for function in ~/.zsh/functions/*; do
   source $function
