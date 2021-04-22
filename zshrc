@@ -37,7 +37,7 @@ export VISUAL=$EDITOR
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Initialize fnm
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
 
 # Load custom functions
 for function in ~/.zsh/functions/*; do
