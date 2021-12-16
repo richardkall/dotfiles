@@ -1,17 +1,15 @@
 #!/bin/zsh
 
-echo "Installing Homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-echo "Installing Homebrew packages..."
-/opt/homebrew/bin/brew install git fnm pure zsh-syntax-highlighting
-
 echo "Symlinking dotfiles..."
 ln -f -s ~/.dotfiles/.aliases ~/.aliases
 ln -f -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -f -s ~/.dotfiles/.hushlogin ~/.hushlogin
 ln -f -s ~/.dotfiles/.zshrc ~/.zshrc
 
-source ~/.zshrc
+echo "Installing Homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "Done!"
+echo "Installing Homebrew packages..."
+/opt/homebrew/bin/brew install git fnm pure zsh-syntax-highlighting
+
+source ~/.zshrc

@@ -1,8 +1,5 @@
-# Set locale
-export LANG=sv_SE.UTF-8
-
 # Add Homebrew path
-export PATH=/opt/homebrew/bin:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Use Pure (github.com/sindresorhus/pure)
 fpath+=/opt/homebrew/share/zsh/site-functions
@@ -14,7 +11,7 @@ autoload -U compinit
 compinit -C
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# Makes color constants available
+# Make color constants available
 autoload -U colors
 colors
 
@@ -42,9 +39,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Initialize fnm
 eval "$(fnm env)"
-
-# Autocomplete for kubectl
-source <(kubectl completion zsh)
 
 # Load custom functions
 for function in ~/.dotfiles/zsh/functions/*; do
