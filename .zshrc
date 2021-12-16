@@ -1,7 +1,11 @@
 # Set locale
 export LANG=sv_SE.UTF-8
 
+# Add Homebrew path
+export PATH=/opt/homebrew/bin:$PATH
+
 # Use Pure (github.com/sindresorhus/pure)
+fpath+=/opt/homebrew/share/zsh/site-functions
 autoload -U promptinit && promptinit
 prompt pure
 
@@ -34,7 +38,7 @@ export EDITOR=vim
 export VISUAL=$EDITOR
 
 # Enable syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Initialize fnm
 eval "$(fnm env)"
@@ -43,7 +47,7 @@ eval "$(fnm env)"
 source <(kubectl completion zsh)
 
 # Load custom functions
-for function in ~/.zsh/functions/*; do
+for function in ~/.dotfiles/zsh/functions/*; do
   source $function
 done
 

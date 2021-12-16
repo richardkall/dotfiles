@@ -1,0 +1,15 @@
+# Show/hide hidden files
+alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
+alias hidehidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+
+# Simple HTTP Server
+alias serve='python -m SimpleHTTPServer 8000'
+
+# Set Git language to English
+alias git="LC_ALL=en_US git"
+
+# Use fnm instead of nvm
+alias nvm="fnm"
+
+# Load local aliases
+[[ -f $HOME/.aliases.local ]] && source $HOME/.aliases.local

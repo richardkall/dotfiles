@@ -4,15 +4,16 @@
 
 ## Setup
 
-```bash
-$ git clone https://github.com/richardkall/dotfiles.git ~/.dotfiles
-$ sh ~/.dotfiles/bootstrap
+Clone repository:
+
+```sh
+git clone git@github.com:richardkall/dotfiles.git ~/.dotfiles
 ```
 
-When adding any new dotfiles, symlink them using:
+Bootstrap environment:
 
-```bash
-$ sh ~/.dotfiles/symlink
+```sh
+~/.dotfiles/bootstrap
 ```
 
 ## Customize
@@ -21,9 +22,4 @@ Add any local customizations to:
 
 - `~/.aliases.local`
 - `~/.gitconfig.local`
-- `~/.vimrc.local`
 - `~/.zshrc.local`
-
-## License
-
-MIT © [Richard Käll](http://richardkall.se)

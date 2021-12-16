@@ -1,32 +1,17 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 
-ask () {
-  printf "\n"
-  read -p "$1 " -r
-}
+echo "Installing Homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-info () {
-  printf "\n*** $1 ***\n"
-}
+echo "Installing Homebrew packages..."
+/opt/homebrew/bin/brew install git fnm pure zsh-syntax-highlighting
 
-info 'Installing Homebrew'
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew update
+echo "Symlinking dotfiles..."
+ln -f -s ~/.dotfiles/.aliases ~/.aliases
+ln -f -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -f -s ~/.dotfiles/.hushlogin ~/.hushlogin
+ln -f -s ~/.dotfiles/.zshrc ~/.zshrc
 
-info 'Installing Homebrew packages'
-  brew install git fnm vim yarn zsh-syntax-highlighting
+source ~/.zshrc
 
-ask 'Which Node version do you want to install?'
-  fnm install "$REPLY"
-  fnm default "$REPLY"
-
-info 'Installing Pure prompt'
-  npm install -g pure-prompt
-
-info 'Symlinking dotfiles'
-  sh symlink
-
-info 'Install vim-plug'
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-info 'Done!'
+echo "Done!"

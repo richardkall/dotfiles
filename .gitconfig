@@ -1,0 +1,18 @@
+[alias]
+  br = branch
+  ca = commit --amend
+  ci = commit -v
+  co = checkout
+  lg = log --oneline --decorate --graph --date=relative
+  st = status
+[core]
+  autocrlf = input
+[credential]
+  helper = osxkeychain
+[include]
+  path = ~/.gitconfig.local
+[init]
+  defaultBranch = main
+[user]
+  name = Richard Käll
+  email = richard.kall@me.com
