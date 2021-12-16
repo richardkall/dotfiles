@@ -35,7 +35,7 @@ export EDITOR=vim
 export VISUAL=$EDITOR
 
 # Enable syntax highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Initialize fnm
 eval "$(fnm env)"
