@@ -3,6 +3,7 @@
 echo "Symlinking dotfiles..."
 ln -f -s ~/.dotfiles/.aliases ~/.aliases
 ln -f -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -f -s ~/.dotfiles/.gitignore ~/.gitignore
 ln -f -s ~/.dotfiles/.hushlogin ~/.hushlogin
 ln -f -s ~/.dotfiles/.zshrc ~/.zshrc
 

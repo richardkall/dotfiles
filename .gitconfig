@@ -8,6 +8,7 @@
   st = status
 [core]
   autocrlf = input
+  excludesfile = ~/.gitignore
 [credential]
   helper = osxkeychain
 [include]
