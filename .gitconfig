@@ -18,3 +18,5 @@
 [user]
   name = Richard Käll
   email = richard.kall@me.com
+[pull]
+  rebase = true
