@@ -11,5 +11,9 @@ alias git="LC_ALL=en_US git"
 # Use fnm instead of nvm
 alias nvm="fnm"
 
+# Use Podman instead of Docker
+alias docker=podman
+alias docker-compose=podman-compose
+
 # Load local aliases
 [[ -f $HOME/.aliases.local ]] && source $HOME/.aliases.local
