@@ -6,6 +6,7 @@
   co = checkout
   lg = log --oneline --decorate --graph --date=relative
   st = status
+  changelog = "!f() { git log --pretty=format:%s $1..HEAD; }; f"
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore
