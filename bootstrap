@@ -11,6 +11,6 @@ echo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing Homebrew packages..."
-/opt/homebrew/bin/brew install git fnm podman pure zsh-syntax-highlighting
+/opt/homebrew/bin/brew install colima docker docker-compose git fnm pure zsh-syntax-highlighting
 
 source ~/.zshrc
