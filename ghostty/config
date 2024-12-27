@@ -1,0 +1,17 @@
+adjust-cell-width = -5%
+background-blur-radius = 10
+background-opacity = 0.95
+bold-is-bright = true
+cursor-style = block
+font-family = Menlo
+font-size = 16
+font-thicken = true
+macos-titlebar-style = tabs
+mouse-hide-while-typing = true
+selection-background = eb6f92
+shell-integration-features = no-cursor
+theme = Dracula
+window-height = 20
+window-new-tab-position = end
+window-padding-x = 8
+window-width = 100

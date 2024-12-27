@@ -6,11 +6,12 @@ ln -f -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -f -s ~/.dotfiles/.gitignore ~/.gitignore
 ln -f -s ~/.dotfiles/.hushlogin ~/.hushlogin
 ln -f -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -f -s ~/.dotfiles/ghostty ~/.config
 
 echo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing Homebrew packages..."
-/opt/homebrew/bin/brew install colima docker docker-compose git fnm pure zsh-syntax-highlighting
+/opt/homebrew/bin/brew install colima docker docker-compose git fnm neovim pure zsh-syntax-highlighting
 
 source ~/.zshrc

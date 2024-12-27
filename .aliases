@@ -8,5 +8,9 @@ alias git="LC_ALL=en_US git"
 # Use fnm instead of nvm
 alias nvm="fnm"
 
+# Use nvim instead of vim
+alias vim="nvim"
+alias vi="nvim"
+
 # Load local aliases
 [[ -f $HOME/.aliases.local ]] && source $HOME/.aliases.local
