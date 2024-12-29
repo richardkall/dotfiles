@@ -15,3 +15,8 @@ window-height = 20
 window-new-tab-position = end
 window-padding-x = 8
 window-width = 100
+
+keybind = super+shift+k=goto_split:top
+keybind = super+shift+l=goto_split:right
+keybind = super+shift+j=goto_split:bottom
+keybind = super+shift+h=goto_split:left
